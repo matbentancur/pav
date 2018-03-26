@@ -3,8 +3,10 @@
 
 
 class Spinning {
+
     private:
         int cantBicicletas;
+
     public:
         Spinning();
         ~Spinning();

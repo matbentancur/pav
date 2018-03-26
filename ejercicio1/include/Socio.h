@@ -6,9 +6,11 @@
 using namespace std;
 
 class Socio {
+
     private:
         string CI;
         string nombre;
+
     public:
         Socio();
         Socio(string,string);
