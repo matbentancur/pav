@@ -5,7 +5,7 @@ Para clonar el GIT desde una terminal:
 
 git clone https://github.com/matbentancur/pav
 
-Este procedimiento se ejecuta una sola vez y se descarga todo el contenido del repoisotorio.
+Este procedimiento se ejecuta una sola vez y se descarga todo el contenido del repositorio.
 
 Para agregar los cambios hechos:
 
