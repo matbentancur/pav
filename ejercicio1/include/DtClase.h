@@ -2,6 +2,7 @@
 #define DTCLASE_H
 
 #include <string>
+#include <iostream>
 #include "Turno.h"
 
 using namespace std;

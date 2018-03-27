@@ -1,6 +1,9 @@
 #ifndef FECHA_H
 #define FECHA_H
 
+#include <stdexcept>
+
+using namespace std;
 
 class Fecha {
 

@@ -13,6 +13,8 @@ class DtEntrenamiento : public DtClase{
         DtEntrenamiento(int,string,Turno,bool);
 
         bool getEnRambla();
+
+        friend ostream &operator<<(ostream&, const DtEntrenamiento & );
 };
 
 #endif // DTENTRENAMIENTO_H

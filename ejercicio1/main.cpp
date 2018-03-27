@@ -1,12 +1,22 @@
 #include <iostream>
 #include <string>
+#include <exception>
 #include "DtClase.h"
 #include "DtSocio.h"
 #include "Fecha.h"
+#include "Socio.h"
+#include "Clase.h"
+
+#define MAX_SOCIOS 240
+#define MAX_CLASES 9
 
 using namespace std;
 
 int main() {
+
+    Socio* socios = new Socio[MAX_SOCIOS];
+    Clase** clases = new Clase*[MAX_CLASES];
+
     cout << "Ejercicio 1" << endl;
     return 0;
 }
