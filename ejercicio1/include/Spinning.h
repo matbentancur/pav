@@ -1,18 +1,21 @@
 #ifndef SPINNING_H
 #define SPINNING_H
 
+#include "Clase.h"
 
-class Spinning {
+
+class Spinning : public Clase {
 
     private:
         int cantBicicletas;
 
     public:
         Spinning();
+        Spinning(int,string,Turno,int);
         ~Spinning();
 
         int getCantBicicletas();
-        void setCantBicicletas();
+        void setCantBicicletas(int);
 
         int cupo();
 

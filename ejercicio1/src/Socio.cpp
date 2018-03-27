@@ -1,7 +1,7 @@
 #include "Socio.h"
 
 Socio::Socio() {
-
+    //contrutuctor
 }
 
 Socio::Socio(string CI, string nombre) {
