@@ -4,8 +4,10 @@ Inscripcion::Inscripcion() {
     //constructor
 }
 
-Inscripcion::Inscripcion(Fecha fecha) {
+Inscripcion::Inscripcion(Fecha fecha, Socio* socio, Clase* clase) {
     this->fecha = fecha;
+    this->socio = socio;
+    this->clase = clase;
 }
 
 Inscripcion::~Inscripcion() {
@@ -20,11 +22,11 @@ void Inscripcion::setFecha(Fecha fecha){
     this->fecha = fecha;
 }
 
-Socio Inscripcion::getSocio(){
+Socio* Inscripcion::getSocio(){
     return this->socio;
 }
 
-void Inscripcion::setSocio(Socio socio){
+void Inscripcion::setSocio(Socio* socio){
     this->socio = socio;
 }
 

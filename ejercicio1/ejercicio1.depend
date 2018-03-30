@@ -2,7 +2,7 @@
 1522039315 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/ejercicio1/main.cpp
 	<iostream>
 
-1522125440 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/main.cpp
+1522445138 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/main.cpp
 	<iostream>
 	<string>
 	<exception>
@@ -18,7 +18,7 @@
 1522085097 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/Socio.h
 	<string>
 
-1522119320 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Spinning.cpp
+1522444738 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Spinning.cpp
 	"Spinning.h"
 
 1522108817 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/Spinning.h
@@ -36,7 +36,7 @@
 1522103850 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtSocio.h
 	<string>
 
-1522109205 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Entrenamiento.cpp
+1522444880 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Entrenamiento.cpp
 	"Entrenamiento.h"
 
 1522109098 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/Entrenamiento.h
@@ -71,10 +71,10 @@
 1522122250 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtEntrenamiento.h
 	"DtClase.h"
 
-1522127477 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Inscripcion.cpp
+1522444283 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Inscripcion.cpp
 	"Inscripcion.h"
 
-1522127482 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/Inscripcion.h
+1522444274 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/Inscripcion.h
 	"Fecha.h"
 	"Socio.h"
 	"Clase.h"

@@ -24,5 +24,10 @@ void Entrenamiento::setEnRambla(bool enRambla){
 }
 
 int Entrenamiento::cupo(){
-    return 0;
+    if (this->enRambla){
+        return 20;
+    }
+    else{
+        return 10;
+    }
 }

@@ -24,5 +24,5 @@ void Spinning::setCantBicicletas(int cantBicicletas){
 }
 
 int Spinning::cupo(){
-    return 0;
+    return this->getCantBicicletas();
 }

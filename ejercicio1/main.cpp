@@ -24,7 +24,10 @@ int main() {
 //Crea un nuevo socio en el sistema. En caso de ya existir, levanta la excepción
 //std::invalid_argument.
 void agregarSocio(string ci, string nombre){
-
+    //falta implementar
+    Socio* socio = new Socio();
+    socio->setCI(ci);
+    socio->setNombre(nombre);
 }
 
 //Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción
