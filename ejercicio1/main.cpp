@@ -12,10 +12,22 @@
 
 using namespace std;
 
+void agregarSocio(Socio*, string, string);
+
 int main() {
 
     Socio* socios = new Socio[MAX_SOCIOS];
-    Clase** clases = new Clase*[MAX_CLASES];
+    //inicializar socios
+    for (int i = 0; i < MAX_SOCIOS; i++) {
+        socios[i].setCI("");
+        socios[i].setNombre("");
+    }
+
+    agregarSocio(socios, "1", "Matias");
+    cout << socios[0] << endl;
+
+
+    Clase** clases = new Clase*[MAX_CLASES]; //arreglo para una clase abstracta.
 
     cout << "Ejercicio 1" << endl;
     return 0;
@@ -23,11 +35,17 @@ int main() {
 
 //Crea un nuevo socio en el sistema. En caso de ya existir, levanta la excepción
 //std::invalid_argument.
-void agregarSocio(string ci, string nombre){
-    //falta implementar
-    Socio* socio = new Socio();
-    socio->setCI(ci);
-    socio->setNombre(nombre);
+void agregarSocio(Socio* socios, string ci, string nombre){
+    for (int i = 0; i < MAX_SOCIOS; i++) {
+        if (socios[i].getCI() == ci){
+            throw std::invalid_argument("Ya existe el socio");
+        }
+        if (socios[i].getCI() == ""){
+            socios[i].setCI(ci);
+            socios[i].setNombre(nombre);
+            break;
+        }
+    }
 }
 
 //Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción

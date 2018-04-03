@@ -15,11 +15,11 @@ int DtSpinning::getCantBicicletas(){
     return this->cantBicicletas;
 }
 
-//error al utilizar el puntero
-ostream &operator<<(ostream &output, const DtSpinning &dtSpinning) {
-    output << "ID: " << "\n"
-        << "Nombre: " << "\n"
-        << "Turno: " << "\n"
-        << "Cantidad de bicicletas: " << "\n";
-    return output;
+ostream& operator<<(ostream& os, DtSpinning& dtSpinning) {
+    os <<
+        "ID: " << dtSpinning.getId() <<"\n" <<
+        "Nombre: " << dtSpinning.getNombre() << "\n"<<
+//        "Turno: " << dtSpinning.getTurno() << "\n" <<
+        "Cantidad de bicicletas: " << dtSpinning.getCantBicicletas() << "\n";
+    return os;
 }

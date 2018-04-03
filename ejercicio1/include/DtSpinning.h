@@ -14,7 +14,7 @@ class DtSpinning : public DtClase {
 
         int getCantBicicletas();
 
-        friend ostream &operator<<(ostream&, const DtSpinning & );
+        friend ostream& operator<<(ostream &os, DtSpinning&);
 };
 
 #endif // DTSPINNING_H

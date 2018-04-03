@@ -28,3 +28,11 @@ string Socio::getNombre(){
 void Socio::setNombre(string nombre){
     this->nombre = nombre;
 }
+
+ostream& operator<<(ostream& os, Socio& socio) {
+    os <<
+        "Cedula: " << socio.getCI()<< "\n" <<
+        "Nombre: " << socio.nombre << "\n"
+    ;
+    return os;
+}
