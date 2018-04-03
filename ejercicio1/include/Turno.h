@@ -11,6 +11,4 @@ enum class Turno {
     Noche
 };
 
-ostream& operator<<(ostream& os, Turno&);
-
 #endif // TURNO_H

@@ -16,7 +16,21 @@ bool DtEntrenamiento::getEnRambla(){
 }
 
 //error al utilizar el puntero
-ostream &operator<<(ostream &output, const DtEntrenamiento &dtEntrenamiento) {
+ostream& operator<<(ostream &os, DtEntrenamiento& dtEntrenamiento) {
+    string turno;
+    if(dtEntrenamiento.getTurno() == Turno::Manana){
+        turno = "Mañana";
+    }
+    else if (dtEntrenamiento.getTurno() == Turno::Tarde){
+        turno = "Tarde";
+    }
+    else if (dtEntrenamiento.getTurno() == Turno::Noche){
+        turno = "Noche";
+    }
+    else{
+        turno = "";
+    }
+
     string stringEnRambla;
     if (true){
         stringEnRambla = "Sí";
@@ -25,9 +39,10 @@ ostream &operator<<(ostream &output, const DtEntrenamiento &dtEntrenamiento) {
         stringEnRambla = "No";
     }
 
-    output << "ID: " << "\n"
-        << "Nombre: " << "\n"
-        << "Turno: " << "\n"
-        << "En rambla: " << stringEnRambla << "\n";
-    return output;
+    os <<
+        "ID: " << dtEntrenamiento.getId() <<"\n" <<
+        "Nombre: " << dtEntrenamiento.getNombre() << "\n"<<
+        "Turno: " << turno << "\n" <<
+        "En rambla: " << dtEntrenamiento << "\n";
+    return os;
 }
