@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "DtSocio.h"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ class Socio {
 
     public:
         Socio();
+        Socio(DtSocio&);
         Socio(string,string);
         ~Socio();
 

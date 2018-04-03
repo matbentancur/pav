@@ -2,6 +2,7 @@
 #define SPINNING_H
 
 #include "Clase.h"
+#include "DtSpinning.h"
 
 
 class Spinning : public Clase {
@@ -10,7 +11,7 @@ class Spinning : public Clase {
         int cantBicicletas;
 
     public:
-        Spinning();
+        Spinning(DtSpinning&);
         Spinning(int,string,Turno,int);
         ~Spinning();
 

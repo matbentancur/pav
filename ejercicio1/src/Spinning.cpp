@@ -1,6 +1,6 @@
 #include "Spinning.h"
 
-Spinning::Spinning() {
+Spinning::Spinning(DtSpinning &dtSpinning) {
     //ctor
 }
 

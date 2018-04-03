@@ -3,6 +3,8 @@
 
 #include <string>
 #include "Turno.h"
+#include "Inscripcion.h"
+#include "DtClase.h"
 
 using namespace std;
 
@@ -12,6 +14,7 @@ class Clase {
         int id;
         string nombre;
         Turno turno;
+//        Inscripcion* inscripciones; //arreglo de inscripciones
 
     public:
         Clase();
@@ -27,6 +30,8 @@ class Clase {
         void setTurno(Turno);
 
         virtual int cupo() = 0;
+
+        DtClase getDtClase(); //para devolver su datatype
 };
 
 #endif // CLASE_H

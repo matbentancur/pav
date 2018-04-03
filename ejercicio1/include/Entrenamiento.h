@@ -2,13 +2,14 @@
 #define ENTRENAMIENTO_H
 
 #include "Clase.h"
+#include "DtEntrenamiento.h"
 
 class Entrenamiento : public Clase {
     private:
         bool enRambla;
 
     public:
-        Entrenamiento();
+        Entrenamiento(DtEntrenamiento&);
         Entrenamiento(int,string,Turno,bool);
         ~Entrenamiento();
 

@@ -4,6 +4,10 @@ Socio::Socio() {
     //contrutuctor
 }
 
+Socio::Socio(DtSocio& dtSocio) {
+    //contrutuctor
+}
+
 Socio::Socio(string CI, string nombre) {
     this->CI = CI;
     this->nombre = nombre;

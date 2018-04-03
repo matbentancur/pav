@@ -105,13 +105,16 @@
 1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Fecha.h
 	<stdexcept>
 
-1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Socio.h
+1522789920 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Socio.h
 	<iostream>
 	<string>
+	"DtSocio.h"
 
-1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Clase.h
+1522791828 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Clase.h
 	<string>
 	"Turno.h"
+	"Inscripcion.h"
+	"DtClase.h"
 
 1522786470 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Clase.cpp
 	"Clase.h"
@@ -122,37 +125,39 @@
 1522786470 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/DtSocio.cpp
 	"DtSocio.h"
 
-1522786470 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/DtSpinning.cpp
+1522788669 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/DtSpinning.cpp
 	"DtSpinning.h"
 
-1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/DtSpinning.h
+1522789608 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/DtSpinning.h
 	"DtClase.h"
 
-1522786470 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Entrenamiento.cpp
+1522789766 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Entrenamiento.cpp
 	"Entrenamiento.h"
 
-1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Entrenamiento.h
+1522789777 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Entrenamiento.h
 	"Clase.h"
+	"DtEntrenamiento.h"
 
 1522786470 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Fecha.cpp
 	"Fecha.h"
 
-1522786470 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Inscripcion.cpp
+1522790354 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Inscripcion.cpp
 	"Inscripcion.h"
 
-1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Inscripcion.h
+1522790323 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Inscripcion.h
 	"Fecha.h"
 	"Socio.h"
 	"Clase.h"
 
-1522786470 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Socio.cpp
+1522789912 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Socio.cpp
 	"Socio.h"
 
-1522786470 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Spinning.cpp
+1522789591 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/Spinning.cpp
 	"Spinning.h"
 
-1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Spinning.h
+1522789693 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/Spinning.h
 	"Clase.h"
+	"DtSpinning.h"
 
 1522788593 source:/home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/src/DtEntrenamiento.cpp
 	"DtEntrenamiento.h"

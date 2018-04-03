@@ -1,6 +1,6 @@
 #include "Entrenamiento.h"
 
-Entrenamiento::Entrenamiento() {
+Entrenamiento::Entrenamiento(DtEntrenamiento& dtEntrenamiento) {
     //contructor
 }
 

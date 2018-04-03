@@ -10,11 +10,10 @@ class Inscripcion {
     private:
         Fecha fecha;
         Socio* socio;
-        Clase* clase;
 
     public:
         Inscripcion();
-        Inscripcion(Fecha, Socio*, Clase*);
+        Inscripcion(Fecha, Socio*);
         ~Inscripcion();
 
         Fecha getFecha();
@@ -22,9 +21,6 @@ class Inscripcion {
 
         Socio* getSocio();
         void setSocio(Socio*);
-
-        Clase* getClase();
-        void setClase(Clase*);
 };
 
 #endif // INSCRIPCION_H
