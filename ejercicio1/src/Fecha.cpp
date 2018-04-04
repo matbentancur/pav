@@ -1,7 +1,7 @@
 #include "Fecha.h"
 
-Fecha::Fecha() {
-    //ctor
+Fecha::Fecha (){
+
 }
 
 Fecha::Fecha (int dia,int mes,int anio){

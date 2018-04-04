@@ -31,3 +31,12 @@ Turno Clase::getTurno(){
 void Clase::setTurno(Turno turno){
     this->turno = turno;
 }
+
+vector<Inscripcion*> Clase::getInscripciones(){
+    return this->inscripciones;
+}
+
+DtClase* Clase::getDtClase(){
+//    DtClase* dtClase = new DtClase(this->id, this->nombre, this->turno, this->inscripciones);
+//    return dtClase;
+}

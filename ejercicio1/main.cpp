@@ -12,40 +12,46 @@
 
 using namespace std;
 
-void agregarSocio(Socio*, string, string);
+struct socios{
+    Socio* socios = new Socio[MAX_SOCIOS];
+    int tope;
+} coleccionSocios;
+
+struct clases{
+    Clase** clases = new Clase*[MAX_CLASES]; //arreglo para una clase abstracta.
+    int tope = 0;
+} coleccionClases;
+
+void agregarSocio(string, string);
+void agregarClase(DtClase&);
+void agregarInscripcion(string, int, Fecha);
+void borrarInscripcion(string, int);
+DtSocio** obtenerInfoSociosPorClase (int, int&);
+DtClase& obtenerClase(int);
 
 int main() {
 
-    Socio* socios = new Socio[MAX_SOCIOS];
-    //inicializar socios
-    for (int i = 0; i < MAX_SOCIOS; i++) {
-        socios[i].setCI("");
-        socios[i].setNombre("");
+    agregarSocio("1", "Socio 1");
+    agregarSocio("2", "Socio 2");
+    for (int i = 0; i < coleccionSocios.tope; i++){
+        cout << coleccionSocios.socios[i] << endl;
     }
 
-    agregarSocio(socios, "1", "Matias");
-    cout << socios[0] << endl;
-
-
-    Clase** clases = new Clase*[MAX_CLASES]; //arreglo para una clase abstracta.
-
-    cout << "Ejercicio 1" << endl;
     return 0;
 }
 
 //Crea un nuevo socio en el sistema. En caso de ya existir, levanta la excepción
 //std::invalid_argument.
-void agregarSocio(Socio* socios, string ci, string nombre){
-    for (int i = 0; i < MAX_SOCIOS; i++) {
-        if (socios[i].getCI() == ci){
+void agregarSocio(string ci, string nombre){
+    int i = 0;
+    for (i; i < coleccionSocios.tope; i++) {
+        if (coleccionSocios.socios[i].getCI() == ci){
             throw std::invalid_argument("Ya existe el socio");
         }
-        if (socios[i].getCI() == ""){
-            socios[i].setCI(ci);
-            socios[i].setNombre(nombre);
-            break;
-        }
     }
+    coleccionSocios.socios[i].setCI(ci);
+    coleccionSocios.socios[i].setNombre(nombre);
+    coleccionSocios.tope++;
 }
 
 //Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción

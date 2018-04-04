@@ -2,8 +2,10 @@
 #define DTCLASE_H
 
 #include <string>
+#include <vector>
 #include <iostream>
 #include "Turno.h"
+#include "Inscripcion.h"
 
 using namespace std;
 
@@ -13,14 +15,16 @@ class DtClase {
         int id;
         string nombre;
         Turno turno;
+        vector<Inscripcion*> inscripciones;
 
     public:
         DtClase();
-        DtClase(int,string,Turno);
+        DtClase(int,string,Turno,vector<Inscripcion>*);
 
         int getId();
         string getNombre();
         Turno getTurno();
+        vector<Inscripcion*> getInscripciones();
 };
 
 #endif // DTCLASE_H
