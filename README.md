@@ -1,6 +1,8 @@
 # pav
 Programación Avanzada
 
+IMPORTANTE: El compilador debe configurarse para c++11.
+
 Para clonar el GIT desde una terminal:
 
 git clone https://github.com/matbentancur/pav
