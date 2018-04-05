@@ -1,4 +1,4 @@
-#include "Inscripcion.h"
+#include "include/Inscripcion.h"
 
 Inscripcion::Inscripcion(Fecha fecha, Socio* socio) {
     this->fecha = fecha;

@@ -1,4 +1,4 @@
-#include "DtEntrenamiento.h"
+#include "include/DtEntrenamiento.h"
 
 DtEntrenamiento::DtEntrenamiento() {
     //constructor

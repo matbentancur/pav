@@ -3,11 +3,11 @@
 #include <iostream>
 #include <stdio.h>
 #include <exception>
-#include "DtClase.h"
-#include "DtSocio.h"
-#include "Fecha.h"
-#include "Socio.h"
-#include "Clase.h"
+#include "include/DtClase.h"
+#include "include/DtSocio.h"
+#include "include/Fecha.h"
+#include "include/Socio.h"
+#include "include/Clase.h"
 
 #define MAX_SOCIOS 240
 #define MAX_CLASES 9
