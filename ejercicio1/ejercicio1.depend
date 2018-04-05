@@ -258,3 +258,87 @@
 	"Socio.h"
 	"Clase.h"
 
+1522939169 source:/home/mbentancur/Escritorio/ejercicio1/main.cpp
+	<cstdlib>
+	<iostream>
+	<stdio.h>
+	<exception>
+	"DtClase.h"
+	"DtSocio.h"
+	"Fecha.h"
+	"Socio.h"
+	"Clase.h"
+
+1522868438 /home/mbentancur/Escritorio/ejercicio1/include/DtClase.h
+	<string>
+	<vector>
+	<iostream>
+	"Turno.h"
+	"Inscripcion.h"
+
+1522861478 /home/mbentancur/Escritorio/ejercicio1/include/Turno.h
+	<iostream>
+
+1522866816 /home/mbentancur/Escritorio/ejercicio1/include/Inscripcion.h
+	"Fecha.h"
+	"Socio.h"
+
+1522866902 /home/mbentancur/Escritorio/ejercicio1/include/Fecha.h
+	<stdexcept>
+
+1522864841 /home/mbentancur/Escritorio/ejercicio1/include/Socio.h
+	<iostream>
+	<string>
+	"DtSocio.h"
+
+1522864503 /home/mbentancur/Escritorio/ejercicio1/include/DtSocio.h
+	<string>
+
+1522868464 /home/mbentancur/Escritorio/ejercicio1/include/Clase.h
+	<string>
+	<vector>
+	"Turno.h"
+	"Inscripcion.h"
+	"DtClase.h"
+
+1522868474 source:/home/mbentancur/Escritorio/ejercicio1/src/Clase.cpp
+	"Clase.h"
+
+1522868479 source:/home/mbentancur/Escritorio/ejercicio1/src/DtClase.cpp
+	"DtClase.h"
+
+1522937977 source:/home/mbentancur/Escritorio/ejercicio1/src/DtEntrenamiento.cpp
+	"DtEntrenamiento.h"
+
+1522860916 /home/mbentancur/Escritorio/ejercicio1/include/DtEntrenamiento.h
+	"DtClase.h"
+
+1522864136 source:/home/mbentancur/Escritorio/ejercicio1/src/DtSocio.cpp
+	"DtSocio.h"
+
+1522937977 source:/home/mbentancur/Escritorio/ejercicio1/src/DtSpinning.cpp
+	"DtSpinning.h"
+
+1522780938 /home/mbentancur/Escritorio/ejercicio1/include/DtSpinning.h
+	"DtClase.h"
+
+1522860317 source:/home/mbentancur/Escritorio/ejercicio1/src/Entrenamiento.cpp
+	"Entrenamiento.h"
+
+1522860317 /home/mbentancur/Escritorio/ejercicio1/include/Entrenamiento.h
+	"Clase.h"
+	"DtEntrenamiento.h"
+
+1522866812 source:/home/mbentancur/Escritorio/ejercicio1/src/Inscripcion.cpp
+	"Inscripcion.h"
+
+1522864850 source:/home/mbentancur/Escritorio/ejercicio1/src/Socio.cpp
+	"Socio.h"
+
+1522860317 source:/home/mbentancur/Escritorio/ejercicio1/src/Spinning.cpp
+	"Spinning.h"
+
+1522860317 /home/mbentancur/Escritorio/ejercicio1/include/Spinning.h
+	"Clase.h"
+	"DtSpinning.h"
+
