@@ -3,7 +3,6 @@
 
 #include "Fecha.h"
 #include "Socio.h"
-#include "Clase.h"
 
 class Inscripcion {
 
@@ -12,7 +11,6 @@ class Inscripcion {
         Socio* socio;
 
     public:
-        Inscripcion();
         Inscripcion(Fecha, Socio*);
         ~Inscripcion();
 

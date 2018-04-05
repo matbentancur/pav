@@ -1,9 +1,5 @@
 #include "DtSocio.h"
 
-DtSocio::DtSocio() {
-    //ctor
-}
-
 DtSocio::DtSocio(string CI, string nombre) {
     this->CI = CI;
     this->nombre = nombre;

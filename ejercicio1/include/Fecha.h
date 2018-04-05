@@ -15,7 +15,6 @@ class Fecha {
     public:
         Fecha();
         Fecha (int,int,int);
-
         int getDia();
         int getMes();
         int getAnio();

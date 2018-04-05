@@ -1,9 +1,5 @@
 #include "Inscripcion.h"
 
-Inscripcion::Inscripcion() {
-    //constructor
-}
-
 Inscripcion::Inscripcion(Fecha fecha, Socio* socio) {
     this->fecha = fecha;
     this->socio = socio;

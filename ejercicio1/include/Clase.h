@@ -2,6 +2,7 @@
 #define CLASE_H
 
 #include <string>
+#include <vector>
 #include "Turno.h"
 #include "Inscripcion.h"
 #include "DtClase.h"
@@ -14,24 +15,20 @@ class Clase {
         int id;
         string nombre;
         Turno turno;
-//        Inscripcion* inscripciones; //arreglo de inscripciones
+        vector<Inscripcion*> inscripciones;
 
     public:
         Clase();
         ~Clase();
-
         int getId();
         void setId(int);
-
         string getNombre();
         void setNombre(string);
-
         Turno getTurno();
         void setTurno(Turno);
-
+        vector<Inscripcion*> getInscripciones();
         virtual int cupo() = 0;
-
-        DtClase getDtClase(); //para devolver su datatype
+        DtClase* getDtClase(); //para devolver su datatype
 };
 
 #endif // CLASE_H

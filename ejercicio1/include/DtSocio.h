@@ -11,9 +11,7 @@ class DtSocio {
         string nombre;
 
     public:
-        DtSocio();
         DtSocio(string,string);
-
         string getCI();
         string getNombre();
 };

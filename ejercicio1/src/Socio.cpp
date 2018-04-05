@@ -5,7 +5,8 @@ Socio::Socio() {
 }
 
 Socio::Socio(DtSocio& dtSocio) {
-    //contrutuctor
+    this->CI = dtSocio.getCI();
+    this->nombre = dtSocio.getNombre();
 }
 
 Socio::Socio(string CI, string nombre) {

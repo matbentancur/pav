@@ -15,3 +15,7 @@ string DtClase::getNombre(){
 Turno DtClase::getTurno(){
     return this->turno;
 }
+
+vector<Inscripcion*> DtClase::getInscripciones(){
+    return this->inscripciones;
+}
