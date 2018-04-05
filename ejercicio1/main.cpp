@@ -169,7 +169,6 @@ bool existeSocio(string ci) {
     if (coleccionSocios.socios[indice].getCI() == ci) {
       existe = true;
     } else {
-      cout << "no existe";
       indice++;
     }
   }
