@@ -2,9 +2,10 @@
 1522039315 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/ejercicio1/main.cpp
 	<iostream>
 
-1522867141 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/main.cpp
+1522939169 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/main.cpp
+	<cstdlib>
 	<iostream>
-	<string>
+	<stdio.h>
 	<exception>
 	"DtClase.h"
 	"DtSocio.h"
@@ -69,13 +70,13 @@
 	"Turno.h"
 	"Inscripcion.h"
 
-1522860317 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/DtSpinning.cpp
+1522937977 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/DtSpinning.cpp
 	"DtSpinning.h"
 
 1522780938 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtSpinning.h
 	"DtClase.h"
 
-1522861991 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/DtEntrenamiento.cpp
+1522937977 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/DtEntrenamiento.cpp
 	"DtEntrenamiento.h"
 
 1522860916 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtEntrenamiento.h
@@ -171,4 +172,89 @@
 
 1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/DtEntrenamiento.h
 	"DtClase.h"
+
+1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\clase.cpp
+	"Clase.h"
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\clase.h
+	<string>
+	"Turno.h"
+	"Inscripcion.h"
+	"DtClase.h"
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\turno.h
+	<iostream>
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\inscripcion.h
+	"Fecha.h"
+	"Socio.h"
+	"Clase.h"
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\fecha.h
+	<stdexcept>
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\socio.h
+	<iostream>
+	<string>
+	"DtSocio.h"
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtsocio.h
+	<string>
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtclase.h
+	<string>
+	<iostream>
+	"Turno.h"
+
+1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtclase.cpp
+	"DtClase.h"
+
+1522812065 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtentrenamiento.cpp
+	"DtEntrenamiento.h"
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtentrenamiento.h
+	"DtClase.h"
+
+1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtsocio.cpp
+	"DtSocio.h"
+
+1522812065 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtspinning.cpp
+	"DtSpinning.h"
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtspinning.h
+	"DtClase.h"
+
+1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\entrenamiento.cpp
+	"Entrenamiento.h"
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\entrenamiento.h
+	"Clase.h"
+	"DtEntrenamiento.h"
+
+1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\fecha.cpp
+	"Fecha.h"
+
+1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\inscripcion.cpp
+	"Inscripcion.h"
+
+1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\socio.cpp
+	"Socio.h"
+
+1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\spinning.cpp
+	"Spinning.h"
+
+1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\spinning.h
+	"Clase.h"
+	"DtSpinning.h"
+
+1522841324 source:c:\users\usuario\desktop\pav\pav\ejercicio1\main.cpp
+	<cstdlib>
+	<iostream>
+	<stdio.h>
+	<exception>
+	"DtClase.h"
+	"DtSocio.h"
+	"Fecha.h"
+	"Socio.h"
+	"Clase.h"
 
