@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <stdio.h>
-#include <exception>
+#include <stdexcept>
 #include "DtClase.h"
 #include "DtSocio.h"
 #include "Fecha.h"
@@ -36,6 +36,8 @@ DtClase& obtenerClase(int);
 bool existeSocio(string);
 void menu();
 void imprimirSocios();
+bool existeClase(int);
+void imprimirClases();
 
 int main() {
 
@@ -49,35 +51,40 @@ int main() {
     cin >> numOper;
     switch (numOper) {
     case 1:
-      cout << "\n\tAgregar socio\n\n";
-      cout << "Ingrese la CI: ";
-      cin >> cedula;
-      cout << "Ingrese el nombre: ";
-      cin >> nombre;
-      agregarSocio(cedula, nombre);
-      break;
+        cout << "\n\tAgregar socio\n\n";
+        cout << "Ingrese la CI: ";
+        cin >> cedula;
+        cout << "Ingrese el nombre: ";
+        cin >> nombre;
+        try{
+            agregarSocio(cedula, nombre);
+        }
+        catch(invalid_argument& ia) {
+            cout << ia.what() << "\n";
+            cin.get();
+        }
+        break;
     case 2:
-      cout << "\n\tAgregar clase\n";
-      break;
+        cout << "\n\tAgregar clase\n";
+        break;
     case 3:
-      cout << "\n\tAgregar inscripcion\n";
-      break;
+        cout << "\n\tAgregar inscripcion\n";
+        break;
     case 4:
-      cout << "\n\tBorrar inscripcion\n";
-      break;
+        cout << "\n\tBorrar inscripcion\n";
+        break;
     case 5:
-      cout << "\n\tObtener informacion de socio por clase\n";
-
-      break;
+        cout << "\n\tObtener informacion de socio por clase\n";
+        break;
     case 6:
-      cout << "\n\tObtener clase\n";
-      break;
+        cout << "\n\tObtener clase\n";
+        break;
     case 7:
-      cout << "\n\tImprimir clases\n";
-      break;
+        imprimirClases();
+        break;
     case 8:
-      imprimirSocios();
-      break;
+        imprimirSocios();
+        break;
     case 9:
       cout << "\nEsta seguro de que desea salir (s/n)?: ";
       cin >> opcion;
@@ -87,7 +94,7 @@ int main() {
       }
       break;
     default:
-      cout << "\nNo ingreso una opcion valida, vuelva a intentarlo...\n";
+        cout << "\nNo ingreso una opcion valida, vuelva a intentarlo...\n";
     }
     cout << "\n";
     cout << "Presione Enter Para continuar";
@@ -103,7 +110,7 @@ int main() {
 void agregarSocio(string ci, string nombre) {
   if (coleccionSocios.tope < MAX_SOCIOS) {
     if (existeSocio(ci) == true) {
-      throw std::invalid_argument("Ya existe el socio");
+      throw invalid_argument("Ya existe el socio");
     } else {
       coleccionSocios.socios[coleccionSocios.tope].setCI(ci);
       coleccionSocios.socios[coleccionSocios.tope].setNombre(nombre);
@@ -118,7 +125,10 @@ void agregarSocio(string ci, string nombre) {
 //Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción
 //std::invalid_argument.
 void agregarClase(DtClase & clase) {
-
+    coleccionClases.clases[coleccionClases.tope]->setId(clase.getId());
+    coleccionClases.clases[coleccionClases.tope]->setNombre(clase.getNombre());
+    coleccionClases.clases[coleccionClases.tope]->setTurno(clase.getTurno());
+    coleccionClases.tope++;
 }
 
 //Crea una inscripción de un socio a una clase. La inscripción tiene lugar siempre y cuando el socio y
@@ -178,5 +188,24 @@ bool existeSocio(string ci) {
 void imprimirSocios(){
     for (int i = 0; i < coleccionSocios.tope; i++){
         cout << coleccionSocios.socios[i] << endl;
+    }
+}
+
+bool existeClase(int id) {
+  int indice = 0;
+  bool existe = false;
+  while (existe == false && indice <= coleccionClases.tope) {
+    if (coleccionClases.clases[indice]->getId() == id) {
+      existe = true;
+    } else {
+      indice++;
+    }
+  }
+  return existe;
+}
+
+void imprimirClases(){
+    for (int i = 0; i < coleccionClases.tope; i++){
+        cout << coleccionClases.clases[i] << endl;
     }
 }
