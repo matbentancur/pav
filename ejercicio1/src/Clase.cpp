@@ -1,4 +1,4 @@
-#include "include/Clase.h"
+#include "Clase.h"
 
 Clase::Clase() {
     //contructor

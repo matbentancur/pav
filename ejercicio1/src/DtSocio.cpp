@@ -1,4 +1,4 @@
-#include "include/DtSocio.h"
+#include "DtSocio.h"
 
 DtSocio::DtSocio(string CI, string nombre) {
     this->CI = CI;

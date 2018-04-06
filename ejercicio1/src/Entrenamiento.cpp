@@ -1,4 +1,4 @@
-#include "include/Entrenamiento.h"
+#include "Entrenamiento.h"
 
 Entrenamiento::Entrenamiento(DtEntrenamiento& dtEntrenamiento) {
     //contructor
