@@ -8,6 +8,7 @@ Spinning::Spinning(int id, string nombre, Turno turno, int cantBicicletas) {
     this->setId(id);
     this->setNombre(nombre);
     this->setTurno(turno);
+    this->setTopeInscripciones(0);
     this->cantBicicletas = cantBicicletas;
 }
 
@@ -23,6 +24,6 @@ void Spinning::setCantBicicletas(int cantBicicletas){
     this->cantBicicletas = cantBicicletas;
 }
 
-int Spinning::cupo(){
+int Spinning::cupo() {
     return this->getCantBicicletas();
 }

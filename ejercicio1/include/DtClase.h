@@ -19,7 +19,7 @@ class DtClase {
 
     public:
         DtClase();
-        DtClase(int,string,Turno,vector<Inscripcion>*);
+        DtClase(int,string,Turno);
 
         int getId();
         string getNombre();
