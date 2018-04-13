@@ -15,7 +15,7 @@ bool DtEntrenamiento::getEnRambla(){
     return this->enRambla;
 }
 
-ostream& operator<<(ostream &os, DtEntrenamiento& dtEntrenamiento) {
+ostream& operator << (ostream &salida, DtEntrenamiento& dtEntrenamiento) {
     string turno;
     if(dtEntrenamiento.getTurno() == Turno::Manana){
         turno = "Mañana";
@@ -38,10 +38,10 @@ ostream& operator<<(ostream &os, DtEntrenamiento& dtEntrenamiento) {
         stringEnRambla = "No";
     }
 
-    os <<
+    salida <<
         "ID: " << dtEntrenamiento.getId() <<"\n" <<
         "Nombre: " << dtEntrenamiento.getNombre() << "\n"<<
         "Turno: " << turno << "\n" <<
         "En rambla: " << dtEntrenamiento << "\n";
-    return os;
+    return salida;
 }

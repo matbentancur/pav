@@ -14,7 +14,7 @@ class DtEntrenamiento : public DtClase{
 
         bool getEnRambla();
 
-        friend ostream& operator<<(ostream &os, DtEntrenamiento&);
+        friend ostream& operator << (ostream &salida, DtEntrenamiento&);
 };
 
 #endif // DTENTRENAMIENTO_H

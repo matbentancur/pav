@@ -15,13 +15,13 @@
 using namespace std;
 
 struct socios{
-    Socio* socios = new Socio[MAX_SOCIOS];
+    Socio* socios[MAX_SOCIOS];
     int tope;
 } coleccionSocios;
 
 struct clases{
-    Clase** clases = new Clase*[MAX_CLASES]; //arreglo para una clase abstracta.
-    int tope = 0;
+    Clase* clases[MAX_CLASES];
+    int tope;
 } coleccionClases;
 
 //FUNCIONES DEL LABORATORIOS
@@ -40,13 +40,16 @@ bool existeClase(int);
 void imprimirClases();
 
 int main() {
+    //Inicializacion de colecciones
+    coleccionSocios.tope = 0;
+    coleccionSocios.tope = 0;
 
-  string nombre;
-  string cedula;
-  int numOper = 0;
-  bool salir = false;
-  char opcion = 'n';
-  do {
+    string nombre;
+    string cedula;
+    int numOper = 0;
+    bool salir = false;
+    char opcion = 'n';
+    do {
     menu();
     cin >> numOper;
     switch (numOper) {
@@ -100,23 +103,25 @@ int main() {
     cout << "Presione Enter Para continuar";
     fflush(stdin);
     cin.ignore();
-  } while (!salir);
+    } while (!salir);
 
-  return 0;
+    return 0;
 }
 
 //Crea un nuevo socio en el sistema. En caso de ya existir, levanta la excepción
 //std::invalid_argument.
 void agregarSocio(string ci, string nombre) {
   if (coleccionSocios.tope < MAX_SOCIOS) {
-    if (existeSocio(ci) == true) {
-      throw invalid_argument("Ya existe el socio");
-    } else {
-      coleccionSocios.socios[coleccionSocios.tope].setCI(ci);
-      coleccionSocios.socios[coleccionSocios.tope].setNombre(nombre);
-      coleccionSocios.tope++;
-      cout << "\nSe agrego con exito.\n";
+    if (coleccionSocios.tope != 0){
+        if (existeSocio(ci) == true) {
+              throw invalid_argument("Ya existe el socio");
+        }
     }
+    coleccionSocios.socios[coleccionSocios.tope] = new Socio();
+    coleccionSocios.socios[coleccionSocios.tope]->setCI(ci);
+    coleccionSocios.socios[coleccionSocios.tope]->setNombre(nombre);
+    coleccionSocios.tope++;
+    cout << "\nSe agrego con exito.\n";
   } else {
     cout << "\nNo se puede agregar, se alcanzo el maximo numero de socios.\n";
   }
@@ -125,10 +130,10 @@ void agregarSocio(string ci, string nombre) {
 //Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción
 //std::invalid_argument.
 void agregarClase(DtClase & clase) {
-    coleccionClases.clases[coleccionClases.tope]->setId(clase.getId());
-    coleccionClases.clases[coleccionClases.tope]->setNombre(clase.getNombre());
-    coleccionClases.clases[coleccionClases.tope]->setTurno(clase.getTurno());
-    coleccionClases.tope++;
+//    coleccionClases.clases[coleccionClases.tope]->setId(clase.getId());
+//    coleccionClases.clases[coleccionClases.tope]->setNombre(clase.getNombre());
+//    coleccionClases.clases[coleccionClases.tope]->setTurno(clase.getTurno());
+//    coleccionClases.tope++;
 }
 
 //Crea una inscripción de un socio a una clase. La inscripción tiene lugar siempre y cuando el socio y
@@ -175,8 +180,8 @@ void menu() {
 bool existeSocio(string ci) {
   int indice = 0;
   bool existe = false;
-  while (existe == false && indice <= coleccionSocios.tope) {
-    if (coleccionSocios.socios[indice].getCI() == ci) {
+  while (existe == false && indice < coleccionSocios.tope) {
+    if (coleccionSocios.socios[indice]->getCI() == ci) {
       existe = true;
     } else {
       indice++;
@@ -187,25 +192,25 @@ bool existeSocio(string ci) {
 
 void imprimirSocios(){
     for (int i = 0; i < coleccionSocios.tope; i++){
-        cout << coleccionSocios.socios[i] << endl;
+        cout << *coleccionSocios.socios[i] << endl;
     }
 }
 
 bool existeClase(int id) {
   int indice = 0;
   bool existe = false;
-  while (existe == false && indice <= coleccionClases.tope) {
-    if (coleccionClases.clases[indice]->getId() == id) {
-      existe = true;
-    } else {
-      indice++;
-    }
-  }
+//  while (existe == false && indice <= coleccionClases.tope) {
+//    if (coleccionClases.clases[indice].getId() == id) {
+//      existe = true;
+//    } else {
+//      indice++;
+//    }
+//  }
   return existe;
 }
 
 void imprimirClases(){
-    for (int i = 0; i < coleccionClases.tope; i++){
-        cout << coleccionClases.clases[i] << endl;
-    }
+//    for (int i = 0; i < coleccionClases.tope; i++){
+//        cout << coleccionClases.clases[i] << endl;
+//    }
 }

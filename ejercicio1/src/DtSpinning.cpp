@@ -15,7 +15,7 @@ int DtSpinning::getCantBicicletas(){
     return this->cantBicicletas;
 }
 
-ostream& operator<<(ostream& os, DtSpinning& dtSpinning) {
+ostream& operator << (ostream& salida, DtSpinning& dtSpinning) {
     string turno;
     if(dtSpinning.getTurno() == Turno::Manana){
         turno = "Mañana";
@@ -30,10 +30,10 @@ ostream& operator<<(ostream& os, DtSpinning& dtSpinning) {
         turno = "";
     }
 
-    os <<
+    salida <<
         "ID: " << dtSpinning.getId() <<"\n" <<
         "Nombre: " << dtSpinning.getNombre() << "\n"<<
         "Turno: " << turno << "\n" <<
         "Cantidad de bicicletas: " << dtSpinning.getCantBicicletas() << "\n";
-    return os;
+    return salida;
 }

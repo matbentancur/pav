@@ -34,10 +34,10 @@ void Socio::setNombre(string nombre){
     this->nombre = nombre;
 }
 
-ostream& operator<<(ostream& os, Socio& socio) {
-    os <<
-        "Cedula: " << socio.getCI()<< "\n" <<
+ostream& operator << (ostream& salida, const Socio& socio) {
+    salida <<
+        "Cedula: " << socio.CI << "\n" <<
         "Nombre: " << socio.nombre << "\n"
     ;
-    return os;
+    return salida;
 }

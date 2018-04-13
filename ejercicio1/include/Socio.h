@@ -24,7 +24,7 @@ class Socio {
         string getNombre();
         void setNombre(string);
 
-        friend ostream& operator<<(ostream &os, Socio&);
+        friend ostream& operator << (ostream &salida, const Socio&);
 };
 
 #endif // SOCIO_H
