@@ -15,8 +15,7 @@ class Entrenamiento : public Clase {
 
         bool getEnRambla();
         void setEnRambla(bool);
-
-        int cupo();
+        virtual int cupo();
 };
 
 #endif // ENTRENAMIENTO_H

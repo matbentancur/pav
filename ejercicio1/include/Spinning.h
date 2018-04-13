@@ -17,9 +17,7 @@ class Spinning : public Clase {
 
         int getCantBicicletas();
         void setCantBicicletas(int);
-
-        int cupo();
-
+        virtual int cupo();
 };
 
 #endif // SPINNING_H
