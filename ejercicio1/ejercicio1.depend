@@ -2,13 +2,16 @@
 1522039315 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/ejercicio1/main.cpp
 	<iostream>
 
-1523586531 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/main.cpp
+1523593496 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/main.cpp
 	<cstdlib>
 	<iostream>
 	<stdio.h>
 	<stdexcept>
+	<typeinfo>
 	"DtClase.h"
 	"DtSocio.h"
+	"DtSpinning.h"
+	"DtEntrenamiento.h"
 	"Fecha.h"
 	"Socio.h"
 	"Clase.h"
@@ -47,10 +50,10 @@
 	"Clase.h"
 	"DtEntrenamiento.h"
 
-1522939731 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Clase.cpp
+1523591987 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Clase.cpp
 	"Clase.h"
 
-1522939703 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/Clase.h
+1523591926 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/Clase.h
 	<string>
 	<vector>
 	"Turno.h"
@@ -60,10 +63,10 @@
 1522861478 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/Turno.h
 	<iostream>
 
-1522939736 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/DtClase.cpp
+1523591784 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/DtClase.cpp
 	"DtClase.h"
 
-1522939709 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtClase.h
+1523591586 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtClase.h
 	<string>
 	<vector>
 	<iostream>
@@ -76,10 +79,10 @@
 1522780938 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtSpinning.h
 	"DtClase.h"
 
-1523585644 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/DtEntrenamiento.cpp
+1523591795 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/DtEntrenamiento.cpp
 	"DtEntrenamiento.h"
 
-1523585624 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtEntrenamiento.h
+1523591804 /home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/include/DtEntrenamiento.h
 	"DtClase.h"
 
 1522939759 source:/home/mbentancur/Dropbox/Todos Mis Datos/Documentos/Estudio/Tecnologo/Tercer Semestre/Programacion Avanzada/Laboratorio/git/pav/ejercicio1/src/Inscripcion.cpp

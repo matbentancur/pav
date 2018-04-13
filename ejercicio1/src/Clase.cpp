@@ -32,8 +32,12 @@ void Clase::setTurno(Turno turno){
     this->turno = turno;
 }
 
-vector<Inscripcion*> Clase::getInscripciones(){
-    return this->inscripciones;
+int Clase::getTopeInscripciones(){
+    return this->topeInscripciones;
+}
+
+void Clase::setTopeInscripciones(int topeInscripciones){
+    this->topeInscripciones = topeInscripciones;
 }
 
 DtClase* Clase::getDtClase(){

@@ -3,8 +3,11 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdexcept>
+#include <typeinfo>
 #include "DtClase.h"
 #include "DtSocio.h"
+#include "DtSpinning.h"
+#include "DtEntrenamiento.h"
 #include "Fecha.h"
 #include "Socio.h"
 #include "Clase.h"
@@ -20,9 +23,13 @@ struct socios{
 } coleccionSocios;
 
 struct clases{
-    Clase* clases[MAX_CLASES];
+    DtClase* clases[MAX_CLASES];
     int tope;
 } coleccionClases;
+
+//VARIALES PARA SABER SI LA CLASE QUE SE VA A CASTEAR
+bool entrenamiento;
+bool spinning;
 
 //FUNCIONES DEL LABORATORIOS
 void agregarSocio(string, string);
@@ -42,10 +49,16 @@ void imprimirClases();
 int main() {
     //Inicializacion de colecciones
     coleccionSocios.tope = 0;
-    coleccionSocios.tope = 0;
+    coleccionClases.tope = 0;
+
+    //variables que cargan el stdin
 
     string nombre;
     string cedula;
+    int id;
+    int tipoClase;
+    int intTurno;
+
     int numOper = 0;
     bool salir = false;
     char opcion = 'n';
@@ -69,6 +82,34 @@ int main() {
         break;
     case 2:
         cout << "\n\tAgregar clase\n";
+        cout << "Ingrese el tipo de clase (1-Entrenamiento, 2-Spinning): ";
+        cin >> tipoClase;
+        cout << "Ingrese el ID: ";
+        cin >> id;
+        cout << "Ingrese el nombre: ";
+        cin >> nombre;
+        cout << "Ingrese el turno (1-Mañana, 2-Tarde, 3-Noche): ";
+        cin >> intTurno;
+        if (tipoClase == 1){
+            entrenamiento = true;
+            spinning = false;
+        }
+        else{
+            entrenamiento = false;
+            spinning = true;
+        }
+        Turno turno;
+        switch (intTurno) {
+            case 1:
+                turno = Turno::Manana;
+            case 2:
+                turno = Turno::Tarde;
+            case 3:
+                turno = Turno::Noche;
+            default:
+                turno = Turno::Manana;
+        }
+//        agregarClase();
         break;
     case 3:
         cout << "\n\tAgregar inscripcion\n";
@@ -129,11 +170,18 @@ void agregarSocio(string ci, string nombre) {
 
 //Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción
 //std::invalid_argument.
-void agregarClase(DtClase & clase) {
-//    coleccionClases.clases[coleccionClases.tope]->setId(clase.getId());
-//    coleccionClases.clases[coleccionClases.tope]->setNombre(clase.getNombre());
-//    coleccionClases.clases[coleccionClases.tope]->setTurno(clase.getTurno());
-//    coleccionClases.tope++;
+void agregarClase(DtClase& clase) {
+    //SOLO TIENE EJEMPLO DE COMO HACER EL CAST
+    try{
+        DtSpinning& spinning = dynamic_cast<DtSpinning&>(clase);
+    }catch(std::bad_cast){
+        cout << "Error en cast para DtSpinning\n";
+    }
+    try{
+        DtEntrenamiento& entrenamiento = dynamic_cast<DtEntrenamiento&>(clase);
+    }catch(std::bad_cast){
+        cout << "Error en cast para DtEntrenamiento\n";
+    }
 }
 
 //Crea una inscripción de un socio a una clase. La inscripción tiene lugar siempre y cuando el socio y
@@ -199,18 +247,18 @@ void imprimirSocios(){
 bool existeClase(int id) {
   int indice = 0;
   bool existe = false;
-//  while (existe == false && indice <= coleccionClases.tope) {
-//    if (coleccionClases.clases[indice].getId() == id) {
-//      existe = true;
-//    } else {
-//      indice++;
-//    }
-//  }
+  while (existe == false && indice < coleccionClases.tope) {
+    if (coleccionClases.clases[indice]->getId() == id) {
+      existe = true;
+    } else {
+      indice++;
+    }
+  }
   return existe;
 }
 
 void imprimirClases(){
 //    for (int i = 0; i < coleccionClases.tope; i++){
-//        cout << coleccionClases.clases[i] << endl;
+//        cout << *coleccionClases.clases[i] << endl;
 //    }
 }

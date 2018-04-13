@@ -15,16 +15,15 @@ class DtClase {
         int id;
         string nombre;
         Turno turno;
-        vector<Inscripcion*> inscripciones;
 
     public:
         DtClase();
-        DtClase(int,string,Turno,vector<Inscripcion>*);
 
         int getId();
         string getNombre();
         Turno getTurno();
-        vector<Inscripcion*> getInscripciones();
+
+        virtual ~DtClase();
 };
 
 #endif // DTCLASE_H
