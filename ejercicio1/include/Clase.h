@@ -29,6 +29,9 @@ class Clase {
         void setTurno(Turno);
         int getTopeInscripciones();
         void setTopeInscripciones(int);
+        Inscripcion* getInscripciones();
+        void agregarInscripcionAlArreglo(Inscripcion*);
+
         virtual int cupo() = 0;
         DtClase* getDtClase(); //para devolver su datatype
 };

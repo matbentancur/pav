@@ -8,6 +8,7 @@ Entrenamiento::Entrenamiento(int id, string nombre, Turno turno, bool enRambla) 
     this->setId(id);
     this->setNombre(nombre);
     this->setTurno(turno);
+    this->setTopeInscripciones(0);
     this->enRambla = enRambla;
 }
 
