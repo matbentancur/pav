@@ -11,6 +11,7 @@ class DtSpinning : public DtClase {
     public:
         DtSpinning();
         DtSpinning(int, string, Turno, int);
+        ~DtSpinning();
 
         int getCantBicicletas();
 

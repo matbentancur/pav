@@ -11,6 +11,10 @@ DtSpinning::DtSpinning(int id, string nombre, Turno turno, int cantBicicletas) {
     this->cantBicicletas = cantBicicletas;
 }
 
+DtSpinning::~DtSpinning() {
+
+}
+
 int DtSpinning::getCantBicicletas(){
     return this->cantBicicletas;
 }

@@ -27,13 +27,13 @@ struct socios{
 } coleccionSocios;
 
 struct clases{
-    DtClase* clases[MAX_CLASES];
+    Clase* clases[MAX_CLASES];
     int tope;
 } coleccionClases;
 
 //VARIALES PARA SABER SI LA CLASE QUE SE VA A CASTEAR
-bool entrenamiento;
-bool spinning;
+bool esEntrenamiento;
+bool esSpinning;
 
 //Temporal
 time_t theTime = time(NULL);
@@ -74,6 +74,8 @@ int main() {
     int id;
     int tipoClase;
     int intTurno;
+    int intEnRambla;
+    int cantBicicletas;
 
     int numOper = 0;
     bool salir = false;
@@ -111,12 +113,21 @@ int main() {
         cout << "Ingrese el turno (1-Mañana, 2-Tarde, 3-Noche): ";
         cin >> intTurno;
         if (tipoClase == 1){
-            entrenamiento = true;
-            spinning = false;
+            cout << "¿Es en rambla? (1-Si, 2-No): ";
+            cin >> intEnRambla;
+            esEntrenamiento = true;
+            esSpinning = false;
+        }
+        else if (tipoClase == 2){
+            cout << "Cantidad de bicibletas: ";
+            cin >> cantBicicletas;
+            esEntrenamiento = false;
+            esSpinning = true;
         }
         else{
-            entrenamiento = false;
-            spinning = true;
+            cout << "No existe el tipo de clase";
+            esEntrenamiento = false;
+            esSpinning = false;
         }
         Turno turno;
         switch (intTurno) {
@@ -129,7 +140,27 @@ int main() {
             default:
                 turno = Turno::Manana;
         }
-//        agregarClase();
+        bool enRambla;
+        if (intEnRambla == 1){
+            enRambla = true;
+        }
+        else{
+            enRambla = false;
+        }
+        try{
+            if(esEntrenamiento){
+                DtEntrenamiento nuevoEntrenamiento = DtEntrenamiento(id, nombre, turno, enRambla);
+                agregarClase(nuevoEntrenamiento);
+            }
+            else if (esSpinning){
+                DtSpinning nuevoSpinning = DtSpinning(id, nombre, turno, cantBicicletas);
+                agregarClase(nuevoSpinning);
+            }
+        }
+        catch(invalid_argument& ia) {
+            cout << ia.what() << "\n";
+            cin.get();
+        }
         break;
     case 3:
         cout << "\n\tAgregar inscripcion\n\n";
@@ -225,16 +256,30 @@ void agregarSocio(string ci, string nombre) {
 //Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción
 //std::invalid_argument.
 void agregarClase(DtClase& clase) {
-    //SOLO TIENE EJEMPLO DE COMO HACER EL CAST
-    try{
-        DtSpinning& spinning = dynamic_cast<DtSpinning&>(clase);
-    }catch(std::bad_cast){
-        cout << "Error en cast para DtSpinning\n";
+    if(esEntrenamiento){
+        try{
+            DtEntrenamiento& entrenamiento = dynamic_cast<DtEntrenamiento&>(clase);
+            Entrenamiento* nuevoEntrenamiento = new Entrenamiento(entrenamiento);
+            coleccionClases.clases[coleccionClases.tope] = nuevoEntrenamiento;
+            coleccionClases.tope++;
+            cout << "\nSe agrego con exito la clase de entrenamiento.\n";
+        }catch(std::bad_cast){
+            cout << "Error en cast para DtEntrenamiento\n";
+        }
     }
-    try{
-        DtEntrenamiento& entrenamiento = dynamic_cast<DtEntrenamiento&>(clase);
-    }catch(std::bad_cast){
-        cout << "Error en cast para DtEntrenamiento\n";
+    else if(esSpinning){
+        try{
+            DtSpinning& spinning = dynamic_cast<DtSpinning&>(clase);
+            Spinning* nuevoSpinning = new Spinning(spinning);
+            coleccionClases.clases[coleccionClases.tope] = nuevoSpinning;
+            coleccionClases.tope++;
+            cout << "\nSe agrego con exito la clase de spinning.\n";
+        }catch(std::bad_cast){
+            cout << "Error en cast para DtSpinning\n";
+        }
+    }
+    else{
+        throw invalid_argument("No se especifica el tipo de clase");
     }
 }
 
@@ -293,26 +338,26 @@ DtSocio** obtenerInfoSociosPorClase(int idClase, int & cantSocios) {
 
 //Retorna la información de la clase identificada por idClase.
 DtClase & obtenerClase(int idClase) {
-    if (existeClase(idClase) == false) {
-      throw invalid_argument("\nNo existe la clase");
-    } else {
-        int indice = 0;
-        while (coleccionClases.clases[indice]->getId() != idClase) {
-            indice++;
-        }
-        Spinning* spinning = dynamic_cast<Spinning*>(coleccionClases.clases[indice]);
-        Entrenamiento* entrenamiento = dynamic_cast<Entrenamiento*>(coleccionClases.clases[indice]);
-        if (spinning != NULL){
-            DtSpinning dtClase = DtSpinning(spinning->getId(), spinning->getNombre(), spinning->getTurno(), spinning->getCantBicicletas());
-            return dtClase;
-        }else if (entrenamiento != NULL){
-            DtEntrenamiento dtClase = DtEntrenamiento(entrenamiento->getId(), entrenamiento->getNombre(), entrenamiento->getTurno(), entrenamiento->getEnRambla());
-            return dtClase;
-        }else{
-            DtClase dtClase = DtClase();
-            return dtClase;
-        }
-    }
+//    if (existeClase(idClase) == false) {
+//      throw invalid_argument("\nNo existe la clase");
+//    } else {
+//        int indice = 0;
+//        while (coleccionClases.clases[indice]->getId() != idClase) {
+//            indice++;
+//        }
+//        Spinning* spinning = dynamic_cast<Spinning*>(coleccionClases.clases[indice]);
+//        Entrenamiento* entrenamiento = dynamic_cast<Entrenamiento*>(coleccionClases.clases[indice]);
+//        if (spinning != NULL){
+//            DtSpinning dtClase = DtSpinning(spinning->getId(), spinning->getNombre(), spinning->getTurno(), spinning->getCantBicicletas());
+//            return dtClase;
+//        }else if (entrenamiento != NULL){
+//            DtEntrenamiento dtClase = DtEntrenamiento(entrenamiento->getId(), entrenamiento->getNombre(), entrenamiento->getTurno(), entrenamiento->getEnRambla());
+//            return dtClase;
+//        }else{
+//            DtClase dtClase = DtClase();
+//            return dtClase;
+//        }
+//    }
 }
 
 void menu() {
@@ -396,7 +441,7 @@ void imprimirSocios(){
 }
 
 void imprimirClases(){
-//    for (int i = 0; i < coleccionClases.tope; i++){
-//        cout << *coleccionClases.clases[i] << endl;
-//    }
+    for (int i = 0; i < coleccionClases.tope; i++){
+        coleccionClases.clases[i]->print();
+    }
 }

@@ -27,3 +27,24 @@ void Spinning::setCantBicicletas(int cantBicicletas){
 int Spinning::cupo() {
     return this->getCantBicicletas();
 }
+
+void Spinning::print() {
+    string turno;
+    if(this->getTurno() == Turno::Manana){
+        turno = "Mañana";
+    }
+    else if (this->getTurno() == Turno::Tarde){
+        turno = "Tarde";
+    }
+    else if (this->getTurno() == Turno::Noche){
+        turno = "Noche";
+    }
+    else{
+        turno = "Sin definir";
+    }
+    cout <<
+        "ID: " << this->getId() <<"\n" <<
+        "Nombre: " << this->getNombre() << "\n"<<
+        "Turno: " << turno << "\n" <<
+        "Cantidad de bicicletas: " << this->getCantBicicletas() << "\n";
+}

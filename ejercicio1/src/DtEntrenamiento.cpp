@@ -11,6 +11,10 @@ DtEntrenamiento::DtEntrenamiento(int id, string nombre, Turno turno, bool enRamb
     this->enRambla = enRambla;
 }
 
+DtEntrenamiento::~DtEntrenamiento() {
+
+}
+
 bool DtEntrenamiento::getEnRambla(){
     return this->enRambla;
 }
@@ -31,7 +35,7 @@ ostream& operator << (ostream &salida, DtEntrenamiento& dtEntrenamiento) {
     }
 
     string stringEnRambla;
-    if (true){
+    if (dtEntrenamiento.getEnRambla()){
         stringEnRambla = "Sí";
     }
     else{
@@ -42,6 +46,6 @@ ostream& operator << (ostream &salida, DtEntrenamiento& dtEntrenamiento) {
         "ID: " << dtEntrenamiento.getId() <<"\n" <<
         "Nombre: " << dtEntrenamiento.getNombre() << "\n"<<
         "Turno: " << turno << "\n" <<
-        "En rambla: " << dtEntrenamiento << "\n";
+        "En rambla: " << stringEnRambla << "\n";
     return salida;
 }

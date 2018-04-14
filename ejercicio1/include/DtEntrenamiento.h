@@ -11,6 +11,7 @@ class DtEntrenamiento : public DtClase{
     public:
         DtEntrenamiento();
         DtEntrenamiento(int,string,Turno,bool);
+        ~DtEntrenamiento();
 
         bool getEnRambla();
 

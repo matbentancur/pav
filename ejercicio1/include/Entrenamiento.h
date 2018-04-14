@@ -9,13 +9,14 @@ class Entrenamiento : public Clase {
         bool enRambla;
 
     public:
-        Entrenamiento(DtEntrenamiento&);
+        Entrenamiento(DtEntrenamiento);
         Entrenamiento(int,string,Turno,bool);
         ~Entrenamiento();
 
         bool getEnRambla();
         void setEnRambla(bool);
         virtual int cupo();
+        virtual void print();
 };
 
 #endif // ENTRENAMIENTO_H

@@ -18,6 +18,8 @@ class Spinning : public Clase {
         int getCantBicicletas();
         void setCantBicicletas(int);
         virtual int cupo();
+
+        void print();
 };
 
 #endif // SPINNING_H

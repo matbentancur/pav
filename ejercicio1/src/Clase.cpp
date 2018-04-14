@@ -4,6 +4,13 @@ Clase::Clase() {
     //contructor
 }
 
+Clase::Clase(int id, string nombre, Turno turno) {
+    this->id = id;
+    this->nombre = nombre;
+    this->turno = turno;
+    this->topeInscripciones = 0;
+}
+
 Clase::~Clase() {
     //destructor
 }

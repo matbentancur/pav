@@ -20,6 +20,7 @@ class Clase {
 
     public:
         Clase();
+        Clase(int, string, Turno);
         ~Clase();
         int getId();
         void setId(int);
@@ -33,6 +34,7 @@ class Clase {
         void agregarInscripcionAlArreglo(Inscripcion*);
 
         virtual int cupo() = 0;
+        virtual void print() = 0;
         DtClase* getDtClase(); //para devolver su datatype
 };
 
