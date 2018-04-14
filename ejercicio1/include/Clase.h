@@ -30,7 +30,7 @@ class Clase {
         void setTurno(Turno);
         int getTopeInscripciones();
         void setTopeInscripciones(int);
-        Inscripcion* getInscripciones();
+        Inscripcion** getInscripciones();
         void agregarInscripcionAlArreglo(Inscripcion*);
 
         virtual int cupo() = 0;

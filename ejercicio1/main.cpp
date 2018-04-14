@@ -113,7 +113,7 @@ int main() {
             esSpinning = false;
         }
         else if (tipoClase == 2){
-            cout << "Cantidad de bicibletas: ";
+            cout << "Cantidad de bicicletas: ";
             cin >> cantBicicletas;
             esEntrenamiento = false;
             esSpinning = true;
@@ -291,23 +291,24 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
         oss << idClase;
         errorMessage += oss.str();
         throw invalid_argument(errorMessage);
-//    } else if (existeInscripcion(idClase, ciSocio) == true){
-//        std::ostringstream oss;
-//        std::string errorMessage = std::string("\nYa existe una inscripcion del socio en la clase: ");
-//        oss << idClase;
-//        errorMessage += oss.str();
-//        throw invalid_argument(errorMessage);
+    } else if (existeInscripcion(idClase, ciSocio) == true){
+        std::ostringstream oss;
+        std::string errorMessage = std::string("\nYa existe una inscripcion del socio con CI: ") + ciSocio + std::string(" en la clase: ");
+        oss << idClase;
+        errorMessage += oss.str();
+        throw invalid_argument(errorMessage);
     }else{
         for(int i = 0; i < coleccionClases.tope; i++){
-//            if (coleccionClases.clases[i]->getId() == idClase) {
-//                signed int cantInscripciones = coleccionClases.clases[i]->getTopeInscripciones();
-//                if(cantInscripciones < coleccionClases.clases[i]->cupo()){
-//                    int indice = buscarSocio(ciSocio);
-//                    Inscripcion* nuevaInscripcion = new Inscripcion(fecha, coleccionSocios.socios[indice]);
-//                    coleccionClases.clases[i]->agregarInscripcionAlArreglo(nuevaInscripcion);
-//                    cout << "\nSe registro con exito la inscripcion.\n";
-//                }
-//            }
+            if (coleccionClases.clases[i]->getId() == idClase) {
+                signed int cantInscripciones = coleccionClases.clases[i]->getTopeInscripciones();
+                if(cantInscripciones < coleccionClases.clases[i]->cupo()){
+                    int indice = buscarSocio(ciSocio);
+                    Socio* socio = coleccionSocios.socios[indice];
+                    Inscripcion* nuevaInscripcion = new Inscripcion(fecha, socio);
+                    coleccionClases.clases[i]->agregarInscripcionAlArreglo(nuevaInscripcion);
+                    cout << "\nSe registro con exito la inscripcion.\n";
+                }
+            }
         }
     }
 }
@@ -326,26 +327,26 @@ DtSocio** obtenerInfoSociosPorClase(int idClase, int & cantSocios) {
 
 //Retorna la información de la clase identificada por idClase.
 DtClase & obtenerClase(int idClase) {
-//    if (existeClase(idClase) == false) {
-//      throw invalid_argument("\nNo existe la clase");
-//    } else {
-//        int indice = 0;
-//        while (coleccionClases.clases[indice]->getId() != idClase) {
-//            indice++;
-//        }
-//        Spinning* spinning = dynamic_cast<Spinning*>(coleccionClases.clases[indice]);
-//        Entrenamiento* entrenamiento = dynamic_cast<Entrenamiento*>(coleccionClases.clases[indice]);
-//        if (spinning != NULL){
-//            DtSpinning dtClase = DtSpinning(spinning->getId(), spinning->getNombre(), spinning->getTurno(), spinning->getCantBicicletas());
-//            return dtClase;
-//        }else if (entrenamiento != NULL){
-//            DtEntrenamiento dtClase = DtEntrenamiento(entrenamiento->getId(), entrenamiento->getNombre(), entrenamiento->getTurno(), entrenamiento->getEnRambla());
-//            return dtClase;
-//        }else{
-//            DtClase dtClase = DtClase();
-//            return dtClase;
-//        }
-//    }
+    if (existeClase(idClase) == false) {
+      throw invalid_argument("\nNo existe la clase");
+    } else {
+        int indice = 0;
+        while (coleccionClases.clases[indice]->getId() != idClase) {
+            indice++;
+        }
+        Spinning* spinning = dynamic_cast<Spinning*>(coleccionClases.clases[indice]);
+        Entrenamiento* entrenamiento = dynamic_cast<Entrenamiento*>(coleccionClases.clases[indice]);
+        if (spinning != NULL){
+            DtSpinning dtClase = DtSpinning(spinning->getId(), spinning->getNombre(), spinning->getTurno(), spinning->getCantBicicletas());
+            return dtClase;
+        }else if (entrenamiento != NULL){
+            DtEntrenamiento dtClase = DtEntrenamiento(entrenamiento->getId(), entrenamiento->getNombre(), entrenamiento->getTurno(), entrenamiento->getEnRambla());
+            return dtClase;
+        }else{
+            DtClase dtClase = DtClase();
+            return dtClase;
+        }
+    }
 }
 
 void menu() {
@@ -380,7 +381,7 @@ bool existeSocio(string ci) {
 int buscarSocio(string ci) {
   int indice = 0;
   bool existe = false;
-  while (existe == false && indice < coleccionSocios.tope) {
+  while (existe == false && indice <= coleccionSocios.tope) {
     if (coleccionSocios.socios[indice]->getCI() == ci) {
       existe = true;
     } else {
@@ -403,23 +404,22 @@ bool existeClase(int id) {
   return existe;
 }
 
-//Falta terminar todavia
 bool existeInscripcion(int idClase, string ciSocio) {
     int indice = 0;
     while (coleccionClases.clases[indice]->getId() != idClase) {
         indice++;
     }
-    bool existe = false;
+    bool existeInscripcion = false;
     int indiceAux = 0;
-//    while (existe == false && indiceAux < coleccionClases.clases[indice]->getTopeInscripciones()) {
-    //Inscripcion* inscripciones = coleccionClases.clases[indice]->getInscripciones();
-//        if (inscripciones[indiceAux]->getSocio()->getCI() == ciSocio) {
-//            existe = true;
-//        } else {
-//            indiceAux++;
-//        }
-//    }
-    return existe;
+    Inscripcion** inscripciones = coleccionClases.clases[indice]->getInscripciones();
+    while (existeInscripcion == false && indiceAux < coleccionClases.clases[indice]->getTopeInscripciones()) {
+        if (inscripciones[indiceAux]->getSocio()->getCI() == ciSocio) {
+            existeInscripcion = true;
+        } else {
+            indiceAux++;
+        }
+    }
+    return existeInscripcion;
 }
 
 void imprimirSocios(){
