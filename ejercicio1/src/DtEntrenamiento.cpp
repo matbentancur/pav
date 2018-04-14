@@ -13,18 +13,18 @@ bool DtEntrenamiento::getEnRambla(){
 }
 
 ostream& operator << (ostream &salida, DtEntrenamiento& dtEntrenamiento) {
-    string turno;
-    if(dtEntrenamiento.getTurno() == Turno::Manana){
-        turno = "Mañana";
+    string stringTurno;
+    if(dtEntrenamiento.getTurno() == 1){
+        stringTurno = "Mañana";
     }
-    else if (dtEntrenamiento.getTurno() == Turno::Tarde){
-        turno = "Tarde";
+    else if (dtEntrenamiento.getTurno() == 2){
+        stringTurno = "Tarde";
     }
-    else if (dtEntrenamiento.getTurno() == Turno::Noche){
-        turno = "Noche";
+    else if (dtEntrenamiento.getTurno() == 3){
+        stringTurno = "Noche";
     }
     else{
-        turno = "";
+        stringTurno = "Sin definir";
     }
 
     string stringEnRambla;
@@ -38,7 +38,7 @@ ostream& operator << (ostream &salida, DtEntrenamiento& dtEntrenamiento) {
     salida <<
         "ID: " << dtEntrenamiento.getId() <<"\n" <<
         "Nombre: " << dtEntrenamiento.getNombre() << "\n"<<
-        "Turno: " << turno << "\n" <<
+        "Turno: " << stringTurno << "\n" <<
         "En rambla: " << stringEnRambla << "\n";
     return salida;
 }

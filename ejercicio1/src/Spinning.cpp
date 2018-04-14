@@ -33,22 +33,22 @@ int Spinning::cupo() {
 }
 
 void Spinning::print() {
-    string turno;
-    if(this->getTurno() == Turno::Manana){
-        turno = "Mañana";
+    string stringTurno;
+    if(this->getTurno() == 1){
+        stringTurno = "Mañana";
     }
-    else if (this->getTurno() == Turno::Tarde){
-        turno = "Tarde";
+    else if (this->getTurno() == 2){
+        stringTurno = "Tarde";
     }
-    else if (this->getTurno() == Turno::Noche){
-        turno = "Noche";
+    else if (this->getTurno() == 3){
+        stringTurno = "Noche";
     }
     else{
-        turno = "Sin definir";
+        stringTurno = "Sin definir";
     }
     cout <<
         "ID: " << this->getId() <<"\n" <<
         "Nombre: " << this->getNombre() << "\n"<<
-        "Turno: " << turno << "\n" <<
+        "Turno: " << stringTurno << "\n" <<
         "Cantidad de bicicletas: " << this->getCantBicicletas() << "\n";
 }

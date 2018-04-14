@@ -61,12 +61,6 @@ int main() {
     coleccionSocios.tope = 0;
     coleccionClases.tope = 0;
 
-    //Agregamos una clase para poder probar las demas funciones
-//    Turno turno = Turno::Manana;
-//    Spinning* nuevaClase = new Spinning(123, "Clase 1", turno, 10);
-//    coleccionClases.clases[0] = nuevaClase;
-//    coleccionClases.tope++;
-
     //variables que cargan el stdin
     int idClase;
     string nombre;
@@ -129,17 +123,18 @@ int main() {
             esEntrenamiento = false;
             esSpinning = false;
         }
+
         Turno turno;
-        switch (intTurno) {
-            case 1:
-                turno = Turno::Manana;
-            case 2:
-                turno = Turno::Tarde;
-            case 3:
-                turno = Turno::Noche;
-            default:
-                turno = Turno::Manana;
+        if (intTurno == 1) {
+            turno = Manana;
         }
+        else if (intTurno == 2){
+            turno = Tarde;
+        }
+        else if (intTurno == 3){
+            turno = Noche;
+        }
+
         bool enRambla;
         if (intEnRambla == 1){
             enRambla = true;
@@ -221,7 +216,6 @@ int main() {
 
 //Crea un nuevo socio en el sistema. En caso de ya existir, levanta la excepción
 //std::invalid_argument.
-
 void agregarSocio(string ci, string nombre) {
   if (coleccionSocios.tope < MAX_SOCIOS) {
     if (existeSocio(ci) == true) {
@@ -240,31 +234,40 @@ void agregarSocio(string ci, string nombre) {
 //Crea una nueva clase en el sistema. En caso de ya existir, levanta una excepción
 //std::invalid_argument.
 void agregarClase(DtClase& clase) {
-    if(esEntrenamiento){
-        try{
-            DtEntrenamiento& entrenamiento = dynamic_cast<DtEntrenamiento&>(clase);
-            Entrenamiento* nuevoEntrenamiento = new Entrenamiento(entrenamiento);
-            coleccionClases.clases[coleccionClases.tope] = nuevoEntrenamiento;
-            coleccionClases.tope++;
-            cout << "\nSe agrego con exito la clase de entrenamiento.\n";
-        }catch(std::bad_cast){
-            cout << "Error en cast para DtEntrenamiento\n";
-        }
-    }
-    else if(esSpinning){
-        try{
-            DtSpinning& spinning = dynamic_cast<DtSpinning&>(clase);
+    if (coleccionClases.tope < MAX_CLASES) {
+        if (existeClase(clase.getId()) == true) {
+          throw invalid_argument("Ya existe el ID de clase");
+        } else {
+            if(esEntrenamiento){
+                try{
+                    DtEntrenamiento& entrenamiento = dynamic_cast<DtEntrenamiento&>(clase);
+                    Entrenamiento* nuevoEntrenamiento = new Entrenamiento(entrenamiento);
+                    coleccionClases.clases[coleccionClases.tope] = nuevoEntrenamiento;
+                    coleccionClases.tope++;
+                    cout << "\nSe agrego con exito la clase de entrenamiento.\n";
+                }catch(std::bad_cast){
+                    cout << "Error en cast para DtEntrenamiento\n";
+                }
+            }
+            else if(esSpinning){
+                try{
+                    DtSpinning& spinning = dynamic_cast<DtSpinning&>(clase);
 
-            Spinning* nuevoSpinning = new Spinning(spinning);
-            coleccionClases.clases[coleccionClases.tope] = nuevoSpinning;
-            coleccionClases.tope++;
-            cout << "\nSe agrego con exito la clase de spinning.\n";
-        }catch(std::bad_cast){
-            cout << "Error en cast para DtSpinning\n";
+                    Spinning* nuevoSpinning = new Spinning(spinning);
+                    coleccionClases.clases[coleccionClases.tope] = nuevoSpinning;
+                    coleccionClases.tope++;
+                    cout << "\nSe agrego con exito la clase de spinning.\n";
+                }catch(std::bad_cast){
+                    cout << "Error en cast para DtSpinning\n";
+                }
+            }
+            else{
+                throw invalid_argument("No se especifica el tipo de clase");
+            }
         }
     }
-    else{
-        throw invalid_argument("No se especifica el tipo de clase");
+    else {
+        cout << "\nNo se puede agregar, se alcanzo el maximo numero de clases.\n";
     }
 }
 
@@ -420,14 +423,16 @@ bool existeInscripcion(int idClase, string ciSocio) {
 }
 
 void imprimirSocios(){
-    cout << "\n" << "Coleccion de Socios:" << "\n" << "---------------------------------" << "\n";
+    cout << "\n" << "Coleccion de Socios:" << "\n";
+    cout << "---------------------------------" << "\n";
     for (int i = 0; i < coleccionSocios.tope; i++){
         cout << *coleccionSocios.socios[i] << "---------------------------------" << "\n";
     }
 }
 
 void imprimirClases(){
-    cout << "\n" << "Coleccion de Clases:" << "\n" << "---------------------------------" << "\n";
+    cout << "\n" << "Coleccion de Clases:" << "\n";
+    cout << "---------------------------------" << "\n";
     for (int i = 0; i < coleccionClases.tope; i++){
         coleccionClases.clases[i]->print();
         cout << "\n" << "---------------------------------" << "\n";

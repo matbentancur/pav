@@ -5,10 +5,10 @@
 
 using namespace std;
 
-enum class Turno {
-    Manana,
-    Tarde,
-    Noche
+enum Turno {
+    Manana = 1,
+    Tarde = 2,
+    Noche = 3
 };
 
 #endif // TURNO_H

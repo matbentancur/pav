@@ -13,24 +13,24 @@ int DtSpinning::getCantBicicletas(){
 }
 
 ostream& operator << (ostream& salida, DtSpinning& dtSpinning) {
-    string turno;
-    if(dtSpinning.getTurno() == Turno::Manana){
-        turno = "Mañana";
+    string stringTurno;
+    if(dtSpinning.getTurno() == 1){
+        stringTurno = "Mañana";
     }
-    else if (dtSpinning.getTurno() == Turno::Tarde){
-        turno = "Tarde";
+    else if (dtSpinning.getTurno() == 2){
+        stringTurno = "Tarde";
     }
-    else if (dtSpinning.getTurno() == Turno::Noche){
-        turno = "Noche";
+    else if (dtSpinning.getTurno() == 3){
+        stringTurno = "Noche";
     }
     else{
-        turno = "";
+        stringTurno = "Sin definir";
     }
 
     salida <<
         "ID: " << dtSpinning.getId() <<"\n" <<
         "Nombre: " << dtSpinning.getNombre() << "\n"<<
-        "Turno: " << turno << "\n" <<
+        "Turno: " << stringTurno << "\n" <<
         "Cantidad de bicicletas: " << dtSpinning.getCantBicicletas() << "\n";
     return salida;
 }
