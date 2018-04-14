@@ -181,90 +181,100 @@
 1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/DtEntrenamiento.h
 	"DtClase.h"
 
-1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\clase.cpp
+1523740526 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\clase.cpp
 	"Clase.h"
 
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\clase.h
+1523740528 c:\users\usuario\desktop\pav\pav\ejercicio1\include\clase.h
 	<string>
+	<vector>
 	"Turno.h"
 	"Inscripcion.h"
 	"DtClase.h"
 
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\turno.h
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\turno.h
 	<iostream>
 
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\inscripcion.h
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\inscripcion.h
 	"Fecha.h"
 	"Socio.h"
-	"Clase.h"
 
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\fecha.h
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\fecha.h
 	<stdexcept>
 
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\socio.h
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\socio.h
 	<iostream>
 	<string>
 	"DtSocio.h"
 
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtsocio.h
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtsocio.h
 	<string>
 
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtclase.h
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtclase.h
 	<string>
+	<vector>
 	<iostream>
 	"Turno.h"
-
-1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtclase.cpp
-	"DtClase.h"
-
-1522812065 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtentrenamiento.cpp
-	"DtEntrenamiento.h"
-
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtentrenamiento.h
-	"DtClase.h"
-
-1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtsocio.cpp
-	"DtSocio.h"
-
-1522812065 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtspinning.cpp
-	"DtSpinning.h"
-
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtspinning.h
-	"DtClase.h"
-
-1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\entrenamiento.cpp
-	"Entrenamiento.h"
-
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\entrenamiento.h
-	"Clase.h"
-	"DtEntrenamiento.h"
-
-1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\fecha.cpp
-	"Fecha.h"
-
-1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\inscripcion.cpp
 	"Inscripcion.h"
 
-1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\socio.cpp
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtclase.cpp
+	"DtClase.h"
+
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtentrenamiento.cpp
+	"DtEntrenamiento.h"
+
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtentrenamiento.h
+	"DtClase.h"
+
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtsocio.cpp
+	"DtSocio.h"
+
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\dtspinning.cpp
+	"DtSpinning.h"
+
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\dtspinning.h
+	"DtClase.h"
+
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\entrenamiento.cpp
+	"Entrenamiento.h"
+
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\entrenamiento.h
+	"Clase.h"
+	"DtEntrenamiento.h"
+
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\fecha.cpp
+	"Fecha.h"
+
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\inscripcion.cpp
+	"Inscripcion.h"
+
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\socio.cpp
 	"Socio.h"
 
-1522811401 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\spinning.cpp
+1523740422 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\spinning.cpp
 	"Spinning.h"
 
-1522811401 c:\users\usuario\desktop\pav\pav\ejercicio1\include\spinning.h
+1523740422 c:\users\usuario\desktop\pav\pav\ejercicio1\include\spinning.h
 	"Clase.h"
 	"DtSpinning.h"
 
-1522841324 source:c:\users\usuario\desktop\pav\pav\ejercicio1\main.cpp
+1523740624 source:c:\users\usuario\desktop\pav\pav\ejercicio1\main.cpp
+	<sstream>
 	<cstdlib>
 	<iostream>
 	<stdio.h>
-	<exception>
+	<stdexcept>
+	<typeinfo>
 	"DtClase.h"
 	"DtSocio.h"
+	"DtSpinning.h"
+	"DtEntrenamiento.h"
 	"Fecha.h"
 	"Socio.h"
+	"Turno.h"
 	"Clase.h"
+	"Entrenamiento.h"
+	"Spinning.h"
+	<time.h>
 
 1522939169 source:/home/mbentancur/Escritorio/ejercicio1/main.cpp
 	<cstdlib>

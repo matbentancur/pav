@@ -47,12 +47,13 @@ void Clase::setTopeInscripciones(int topeInscripciones){
     this->topeInscripciones = topeInscripciones;
 }
 
-//Inscripcion* Clase::getInscripciones(){
-//    return this->inscripciones;
-//}
+Inscripcion** Clase::getInscripciones(){
+    return this->inscripciones;
+}
 
 void Clase::agregarInscripcionAlArreglo(Inscripcion* inscripcion){
     this->inscripciones[topeInscripciones] = inscripcion;
+    this->topeInscripciones++;
 }
 
 DtClase* Clase::getDtClase(){
