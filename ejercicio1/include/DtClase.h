@@ -18,6 +18,7 @@ class DtClase {
 
     public:
         DtClase();
+        DtClase(int, string, Turno);
 
         int getId();
         string getNombre();

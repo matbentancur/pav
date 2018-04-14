@@ -221,22 +221,6 @@ int main() {
 
 //Crea un nuevo socio en el sistema. En caso de ya existir, levanta la excepción
 //std::invalid_argument.
-//void agregarSocio(string ci, string nombre) {
-//  if (coleccionSocios.tope < MAX_SOCIOS) {
-//    if (coleccionSocios.tope != 0){
-//        if (existeSocio(ci) == true) {
-//              throw invalid_argument("Ya existe el socio");
-//        }
-//    }
-//    coleccionSocios.socios[coleccionSocios.tope] = new Socio();
-//    coleccionSocios.socios[coleccionSocios.tope]->setCI(ci);
-//    coleccionSocios.socios[coleccionSocios.tope]->setNombre(nombre);
-//    coleccionSocios.tope++;
-//    cout << "\nSe agrego con exito.\n";
-//  } else {
-//    cout << "\nNo se puede agregar, se alcanzo el maximo numero de socios.\n";
-//  }
-//}
 
 void agregarSocio(string ci, string nombre) {
   if (coleccionSocios.tope < MAX_SOCIOS) {
@@ -270,6 +254,7 @@ void agregarClase(DtClase& clase) {
     else if(esSpinning){
         try{
             DtSpinning& spinning = dynamic_cast<DtSpinning&>(clase);
+
             Spinning* nuevoSpinning = new Spinning(spinning);
             coleccionClases.clases[coleccionClases.tope] = nuevoSpinning;
             coleccionClases.tope++;
@@ -435,13 +420,16 @@ bool existeInscripcion(int idClase, string ciSocio) {
 }
 
 void imprimirSocios(){
+    cout << "\n" << "Coleccion de Socios:" << "\n" << "---------------------------------" << "\n";
     for (int i = 0; i < coleccionSocios.tope; i++){
-        cout << *coleccionSocios.socios[i] << endl;
+        cout << *coleccionSocios.socios[i] << "---------------------------------" << "\n";
     }
 }
 
 void imprimirClases(){
+    cout << "\n" << "Coleccion de Clases:" << "\n" << "---------------------------------" << "\n";
     for (int i = 0; i < coleccionClases.tope; i++){
         coleccionClases.clases[i]->print();
+        cout << "\n" << "---------------------------------" << "\n";
     }
 }

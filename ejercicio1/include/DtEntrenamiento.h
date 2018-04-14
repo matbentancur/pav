@@ -9,8 +9,7 @@ class DtEntrenamiento : public DtClase{
         bool enRambla;
 
     public:
-        DtEntrenamiento();
-        DtEntrenamiento(int,string,Turno,bool);
+        DtEntrenamiento(int, string, Turno, bool);
         ~DtEntrenamiento();
 
         bool getEnRambla();

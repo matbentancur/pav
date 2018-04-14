@@ -1,13 +1,6 @@
 #include "DtEntrenamiento.h"
 
-DtEntrenamiento::DtEntrenamiento() {
-    //constructor
-}
-
-DtEntrenamiento::DtEntrenamiento(int id, string nombre, Turno turno, bool enRambla) {
-    id = id;
-    nombre = nombre;
-    turno = turno;
+DtEntrenamiento::DtEntrenamiento(int id, string nombre, Turno turno, bool enRambla) : DtClase(id,nombre,turno){
     this->enRambla = enRambla;
 }
 

@@ -1,7 +1,11 @@
 #include "Spinning.h"
 
 Spinning::Spinning(DtSpinning &dtSpinning) {
-    //ctor
+    this->setId(dtSpinning.getId());
+    this->setNombre(dtSpinning.getNombre());
+    this->setTurno(dtSpinning.getTurno());
+    this->setTopeInscripciones(0);
+    this->setCantBicicletas(dtSpinning.getCantBicicletas());
 }
 
 Spinning::Spinning(int id, string nombre, Turno turno, int cantBicicletas) {

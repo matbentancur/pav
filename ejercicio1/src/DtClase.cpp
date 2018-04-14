@@ -4,6 +4,12 @@ DtClase::DtClase() {
     //ctor
 }
 
+DtClase::DtClase(int id, string nombre, Turno turno) {
+    this->id = id;
+    this->nombre = nombre;
+    this->turno = turno;
+}
+
 int DtClase::getId(){
     return this->id;
 }

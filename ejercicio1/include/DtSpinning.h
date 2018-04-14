@@ -9,7 +9,6 @@ class DtSpinning : public DtClase {
         int cantBicicletas;
 
     public:
-        DtSpinning();
         DtSpinning(int, string, Turno, int);
         ~DtSpinning();
 
