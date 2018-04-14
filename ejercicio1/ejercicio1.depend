@@ -181,10 +181,10 @@
 1522786470 /home/tecnoinf/Documentos/mbentancur/pav/ejercicio1/include/DtEntrenamiento.h
 	"DtClase.h"
 
-1523740526 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\clase.cpp
+1523742051 source:c:\users\usuario\desktop\pav\pav\ejercicio1\src\clase.cpp
 	"Clase.h"
 
-1523740528 c:\users\usuario\desktop\pav\pav\ejercicio1\include\clase.h
+1523742051 c:\users\usuario\desktop\pav\pav\ejercicio1\include\clase.h
 	<string>
 	<vector>
 	"Turno.h"
@@ -257,7 +257,7 @@
 	"Clase.h"
 	"DtSpinning.h"
 
-1523740624 source:c:\users\usuario\desktop\pav\pav\ejercicio1\main.cpp
+1523745220 source:c:\users\usuario\desktop\pav\pav\ejercicio1\main.cpp
 	<sstream>
 	<cstdlib>
 	<iostream>
