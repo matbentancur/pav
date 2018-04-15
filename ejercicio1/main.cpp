@@ -326,7 +326,7 @@ DtSocio** obtenerInfoSociosPorClase(int idClase, int & cantSocios) {
 }
 
 //Retorna la información de la clase identificada por idClase.
-DtClase & obtenerClase(int idClase) {
+DtClase& obtenerClase(int idClase) {
     if (existeClase(idClase) == false) {
       throw invalid_argument("\nNo existe la clase");
     } else {
@@ -334,18 +334,28 @@ DtClase & obtenerClase(int idClase) {
         while (coleccionClases.clases[indice]->getId() != idClase) {
             indice++;
         }
-        Spinning* spinning = dynamic_cast<Spinning*>(coleccionClases.clases[indice]);
-        Entrenamiento* entrenamiento = dynamic_cast<Entrenamiento*>(coleccionClases.clases[indice]);
-        if (spinning != NULL){
-            DtSpinning dtClase = DtSpinning(spinning->getId(), spinning->getNombre(), spinning->getTurno(), spinning->getCantBicicletas());
-            return dtClase;
-        }else if (entrenamiento != NULL){
-            DtEntrenamiento dtClase = DtEntrenamiento(entrenamiento->getId(), entrenamiento->getNombre(), entrenamiento->getTurno(), entrenamiento->getEnRambla());
-            return dtClase;
-        }else{
-            DtClase dtClase = DtClase();
-            return dtClase;
+        try{
+            Entrenamiento* entrenamiento = dynamic_cast<Entrenamiento*>(coleccionClases.clases[indice]);
+            if (entrenamiento != NULL){
+                DtEntrenamiento dtClase = DtEntrenamiento(entrenamiento->getId(), entrenamiento->getNombre(), entrenamiento->getTurno(), entrenamiento->getEnRambla());
+                cout << dtClase << "\n";
+                return dtClase;
+            }
+        }catch(std::bad_cast){
+            cout << "Error en cast para Entrenamiento\n";
         }
+        try{
+            Spinning* spinning = dynamic_cast<Spinning*>(coleccionClases.clases[indice]);
+            if (spinning != NULL){
+                DtSpinning dtClase = DtSpinning(spinning->getId(), spinning->getNombre(), spinning->getTurno(), spinning->getCantBicicletas());
+                cout << dtClase << "\n";
+                return dtClase;
+            }
+        }catch(std::bad_cast){
+            cout << "Error en cast para Spinning\n";
+        }
+        DtClase dtClase = DtClase();
+        return dtClase;
     }
 }
 
