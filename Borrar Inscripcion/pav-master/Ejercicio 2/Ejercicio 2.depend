@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1523212119 source:d:\materias tecnologo\programación avanzada\laboratorio 1\ejercicio 2\ejercicio 2\a.cpp
+	"A.h"
+
+1523212739 d:\materias tecnologo\programación avanzada\laboratorio 1\ejercicio 2\ejercicio 2\a.h
+	<string>
+
+1523212151 source:d:\materias tecnologo\programación avanzada\laboratorio 1\ejercicio 2\ejercicio 2\b.cpp
+	"B.h"
+
+1523212034 d:\materias tecnologo\programación avanzada\laboratorio 1\ejercicio 2\ejercicio 2\b.h
+	<string>
+
+1523212181 source:d:\materias tecnologo\programación avanzada\laboratorio 1\ejercicio 2\ejercicio 2\c.cpp
+	"C.h"
+
+1523212085 d:\materias tecnologo\programación avanzada\laboratorio 1\ejercicio 2\ejercicio 2\c.h
+	<string>
+
+1523211944 source:d:\materias tecnologo\programación avanzada\laboratorio 1\ejercicio 2\ejercicio 2\main.cpp
+	<iostream>
+	"A.h"
+	"B.h"
+	"C.h"
+
