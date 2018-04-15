@@ -55,6 +55,7 @@ bool existeInscripcion(int, string);
 void imprimirSocios();
 void imprimirClases();
 int buscarSocio(string);
+int buscarClase(int);
 
 int main() {
     //Inicializacion de colecciones
@@ -330,7 +331,7 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
                     cout << "\nSe registro con exito la inscripcion.\n";
                 }else{
                     std::ostringstream oss;
-                    std::string errorMessage = std::string("\No se puede inscribir. Se alcanzo el cupo maximo de inscripciones para la clase con id: ");
+                    std::string errorMessage = std::string("\nNo se puede inscribir. Se alcanzo el cupo maximo de inscripciones para la clase con id: ");
                     oss << idClase;
                     errorMessage += oss.str();
                     throw invalid_argument(errorMessage);
@@ -343,22 +344,22 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
 //Borra la inscripción de un socio a una clase. Si no existe una inscripción de ese usuario para esa
 //clase, se levanta una excepción std::invalid_argument.
 void borrarInscripcion(string ciSocio, int idClase) {
-//    bool existe = existeInscripcion(idClase,ciSocio);
-//    if(existe == false){
-//        throw invalid_argument("La inscripcion no existe");
-//    }else{
-//        for(int i = 0; i < coleccionClases.tope; i++){
-//            if (coleccionClases.clases[i]->getId() == idClase && coleccionSocios.socios[i]->getCI() == ciSocio){
-//                for(int j=o;j<i;j++){
-//                 // Tendria que fijarse dentro de la clase cual inscripcion es //
-//                // Borra la inscripcion //
-//                //delete coleccionClases.clases[i];
-//              }
-//            }
-//        }
-//        cout << "\nSe borro la inscripcion.\n";
-//       }
-
+    bool existe = existeInscripcion(idClase,ciSocio);
+    if(existe == false){
+//    if(false){
+        throw invalid_argument("\nLa inscripcion no existe\n");
+    }
+    else{
+        int indiceClase = buscarClase(idClase);
+        Inscripcion** inscripciones = coleccionClases.clases[indiceClase]->getInscripciones();
+        int topeIncripciones = coleccionClases.clases[indiceClase]->getTopeInscripciones();
+        for(int indiceInscripciones = 0; indiceInscripciones < topeIncripciones ; indiceInscripciones++){
+            if (inscripciones[indiceInscripciones]->getSocio()->getCI() == ciSocio){
+                coleccionClases.clases[indiceClase]->quitarIncripcionAlArreglo(indiceInscripciones);
+                cout << "\nSe borro la inscripcion.\n";
+              }
+            }
+        }
 }
 
 //Retorna un arreglo con los socios que están inscriptos a determinada clase. El largo del arreglo de
@@ -486,9 +487,22 @@ bool existeClase(int id) {
   return existe;
 }
 
+int buscarClase(int idClase) {
+  int indice = 0;
+  bool existe = false;
+  while (existe == false && indice <= coleccionClases.tope) {
+    if (coleccionClases.clases[indice]->getId() == idClase) {
+      existe = true;
+    } else {
+      indice++;
+    }
+  }
+  return indice;
+}
+
 bool existeInscripcion(int idClase, string ciSocio) {
     int indice = 0;
-    while (coleccionClases.clases[indice]->getId() != idClase) {
+    while (coleccionClases.clases[indice]->getId() != idClase && indice < coleccionClases.tope) {
         indice++;
     }
     bool existeInscripcion = false;

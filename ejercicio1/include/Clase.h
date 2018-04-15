@@ -32,6 +32,7 @@ class Clase {
         void setTopeInscripciones(int);
         Inscripcion** getInscripciones();
         void agregarInscripcionAlArreglo(Inscripcion*);
+        void quitarIncripcionAlArreglo(int indiceInscripcion);
 
         virtual int cupo() = 0;
         virtual void print() = 0;
