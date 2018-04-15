@@ -71,7 +71,6 @@ int main() {
     int intEnRambla;
     int cantBicicletas;
 
-    int cantSocios = 0;
     int numOper = 0;
     bool salir = false;
     char opcion = 'n';
@@ -174,6 +173,17 @@ int main() {
         break;
     case 4:
         cout << "\n\tBorrar inscripcion\n\n";
+        cout << "Ingrese la CI del socio: ";
+        cin >> cedula;
+        cout << "Ingrese el ID de la clase: ";
+        cin >> idClase;
+        try{
+            borrarInscripcion(cedula,idClase);
+        }
+        catch(invalid_argument& ia) {
+            cout << ia.what() << "\n";
+            cin.get();
+        }
         break;
     case 5:
         cout << "\n\tObtener informacion de socio por clase\n\n";
@@ -332,6 +342,21 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
 //Borra la inscripción de un socio a una clase. Si no existe una inscripción de ese usuario para esa
 //clase, se levanta una excepción std::invalid_argument.
 void borrarInscripcion(string ciSocio, int idClase) {
+    bool existe = existeInscripcion(idClase,ciSocio);
+    if(existe == false){
+        throw invalid_argument("La inscripcion no existe");
+    }else{
+        for(int i = 0; i < coleccionClases.tope; i++){
+            if (coleccionClases.clases[i]->getId() == idClase && coleccionSocios.socios[i]->getCI() == ciSocio){
+                for(int j=o;j<i;j++){
+                 // Tendria que fijarse dentro de la clase cual inscripcion es //
+                // Borra la inscripcion //
+                //delete coleccionClases.clases[i];
+              }
+            }
+        }
+        cout << "\nSe borro la inscripcion.\n";
+       }
 
 }
 
