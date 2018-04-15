@@ -36,7 +36,6 @@ class Clase {
 
         virtual int cupo() = 0;
         virtual void print() = 0;
-        DtClase* getDtClase(); //para devolver su datatype
 };
 
 #endif // CLASE_H

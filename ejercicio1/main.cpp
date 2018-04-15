@@ -162,9 +162,9 @@ int main() {
         cin >> idClase;
         cout << "Ingrese el dia de la inscripcion: ";
         cin >> dia;
-        cout << "Ingrese el mesa de la inscripcion: ";
+        cout << "Ingrese el mes de la inscripcion: ";
         cin >> mes;
-        cout << "Ingrese el amio de la inscripcion: ";
+        cout << "Ingrese el anio de la inscripcion: ";
         cin >> anio;
         try{
             fecha = Fecha(dia, mes, anio);
@@ -194,8 +194,8 @@ int main() {
         cout << "Ingrese el ID de la clase: ";
         cin >> idClase;
         try{
-            DtSocio** socios = obtenerInfoSociosPorClase(idClase, cantSocios);
-            //imprimirSociosPorClase(socios, cantSocios);
+//            DtSocio** socios = obtenerInfoSociosPorClase(idClase, cantSocios);
+            obtenerInfoSociosPorClase(idClase, cantSocios);
         }
         catch(invalid_argument& ia) {
             cout << ia.what() << "\n";
@@ -207,7 +207,8 @@ int main() {
         cout << "Ingrese el ID de la clase: ";
         cin >> idClase;
         try{
-            DtClase& dtClase = obtenerClase(idClase);
+//            DtClase& dtClase = obtenerClase(idClase);
+            obtenerClase(idClase);
         }
         catch(invalid_argument& ia) {
             cout << ia.what() << "\n";
@@ -384,6 +385,7 @@ DtSocio** obtenerInfoSociosPorClase(int idClase, int & cantSocios) {
                     for(int i = 0; i < cantSocios; i++){
                         DtSocio* socio = new DtSocio(inscripcionesDeClase[i]->getSocio()->getCI(), inscripcionesDeClase[i]->getSocio()->getNombre());
                         infoSocios[i] = socio;
+                        cout << *socio << "\n";
                     }
                     return infoSocios;
                 }else{
@@ -398,6 +400,8 @@ DtSocio** obtenerInfoSociosPorClase(int idClase, int & cantSocios) {
             }
         }
     }
+    DtSocio* infoSocios[0];
+    return infoSocios;
 }
 
 //Retorna la información de la clase identificada por idClase.

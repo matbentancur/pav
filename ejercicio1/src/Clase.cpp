@@ -62,8 +62,3 @@ void Clase::quitarIncripcionAlArreglo(int indiceInscripcion){
     this->inscripciones[topeInscripciones-1] = NULL;
     this->topeInscripciones--;
 }
-
-DtClase* Clase::getDtClase(){
-//    DtClase* dtClase = new DtClase(this->id, this->nombre, this->turno, this->inscripciones);
-//    return dtClase;
-}

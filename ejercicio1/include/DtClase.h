@@ -2,7 +2,6 @@
 #define DTCLASE_H
 
 #include <string>
-#include <vector>
 #include <iostream>
 #include "Turno.h"
 #include "Inscripcion.h"
