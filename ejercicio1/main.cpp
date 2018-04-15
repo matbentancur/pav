@@ -14,7 +14,6 @@
 #include "Clase.h"
 #include "Entrenamiento.h"
 #include "Spinning.h"
-#include <time.h>
 
 #define MAX_SOCIOS 240
 #define MAX_CLASES 9
@@ -35,10 +34,6 @@ struct clases{
 bool esEntrenamiento;
 bool esSpinning;
 
-//Temporal
-time_t theTime = time(NULL);
-struct tm *aTime = localtime(&theTime);
-
 //FUNCIONES DEL LABORATORIOS
 void agregarSocio(string, string);
 void agregarClase(DtClase&);
@@ -56,6 +51,7 @@ void imprimirSocios();
 void imprimirClases();
 int buscarSocio(string);
 int buscarClase(int);
+void imprimirSociosPorClase(DtSocio**, int);
 
 int main() {
     //Inicializacion de colecciones
@@ -76,10 +72,10 @@ int main() {
     int numOper = 0;
     bool salir = false;
     char opcion = 'n';
-    int dia = aTime->tm_mday;
-    int mes = aTime->tm_mon + 1;
-    int anio = aTime->tm_year + 1900;
-    Fecha fechaDeHoy = Fecha(dia, mes, anio);
+    int dia;
+    int mes;
+    int anio;
+    Fecha fecha;
     do {
     menu();
     cin >> numOper;
@@ -125,7 +121,6 @@ int main() {
             esEntrenamiento = false;
             esSpinning = false;
         }
-
         Turno turno;
         if (intTurno == 1) {
             turno = Manana;
@@ -165,8 +160,15 @@ int main() {
         cin >> cedula;
         cout << "Ingrese el ID de la clase: ";
         cin >> idClase;
+        cout << "Ingrese el dia de la inscripcion: ";
+        cin >> dia;
+        cout << "Ingrese el mesa de la inscripcion: ";
+        cin >> mes;
+        cout << "Ingrese el amio de la inscripcion: ";
+        cin >> anio;
         try{
-            agregarInscripcion(cedula, idClase, fechaDeHoy);
+            fecha = Fecha(dia, mes, anio);
+            agregarInscripcion(cedula, idClase, fecha);
         }
         catch(invalid_argument& ia) {
             cout << ia.what() << "\n";
@@ -192,7 +194,8 @@ int main() {
         cout << "Ingrese el ID de la clase: ";
         cin >> idClase;
         try{
-            obtenerInfoSociosPorClase(idClase, cantSocios);
+            DtSocio** socios = obtenerInfoSociosPorClase(idClase, cantSocios);
+            //imprimirSociosPorClase(socios, cantSocios);
         }
         catch(invalid_argument& ia) {
             cout << ia.what() << "\n";
@@ -346,20 +349,19 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
 void borrarInscripcion(string ciSocio, int idClase) {
     bool existe = existeInscripcion(idClase,ciSocio);
     if(existe == false){
-//    if(false){
         throw invalid_argument("\nLa inscripcion no existe\n");
     }
     else{
         int indiceClase = buscarClase(idClase);
         Inscripcion** inscripciones = coleccionClases.clases[indiceClase]->getInscripciones();
         int topeIncripciones = coleccionClases.clases[indiceClase]->getTopeInscripciones();
-        for(int indiceInscripciones = 0; indiceInscripciones < topeIncripciones ; indiceInscripciones++){
-            if (inscripciones[indiceInscripciones]->getSocio()->getCI() == ciSocio){
-                coleccionClases.clases[indiceClase]->quitarIncripcionAlArreglo(indiceInscripciones);
-                cout << "\nSe borro la inscripcion.\n";
-              }
-            }
+        int indiceInscripciones = 0;
+        while(inscripciones[indiceInscripciones]->getSocio()->getCI() != ciSocio && indiceInscripciones < topeIncripciones){
+            indiceInscripciones++;
         }
+        coleccionClases.clases[indiceClase]->quitarIncripcionAlArreglo(indiceInscripciones);
+        cout << "\nSe borro la inscripcion.\n";
+    }
 }
 
 //Retorna un arreglo con los socios que están inscriptos a determinada clase. El largo del arreglo de
@@ -523,6 +525,14 @@ void imprimirSocios(){
     cout << "---------------------------------" << "\n";
     for (int i = 0; i < coleccionSocios.tope; i++){
         cout << *coleccionSocios.socios[i] << "---------------------------------" << "\n";
+    }
+}
+
+void imprimirSociosPorClase(DtSocio** socios, int cantSocios){
+    cout << "\n" << "Coleccion de Socios:" << "\n";
+    cout << "---------------------------------" << "\n";
+    for (int i = 0; i < cantSocios; i++){
+        cout << socios[i] << "---------------------------------" << "\n";
     }
 }
 
