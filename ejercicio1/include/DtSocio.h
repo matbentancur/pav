@@ -14,6 +14,8 @@ class DtSocio {
         DtSocio(string,string);
         string getCI();
         string getNombre();
+
+        friend ostream& operator<<(ostream &os, DtSocio&);
 };
 
 #endif // DTSOCIO_H
