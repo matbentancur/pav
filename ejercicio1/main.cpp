@@ -71,6 +71,7 @@ int main() {
     int intEnRambla;
     int cantBicicletas;
 
+    int cantSocios = 0;
     int numOper = 0;
     bool salir = false;
     char opcion = 'n';
@@ -176,6 +177,15 @@ int main() {
         break;
     case 5:
         cout << "\n\tObtener informacion de socio por clase\n\n";
+        cout << "Ingrese el ID de la clase: ";
+        cin >> idClase;
+        try{
+            obtenerInfoSociosPorClase(idClase, cantSocios);
+        }
+        catch(invalid_argument& ia) {
+            cout << ia.what() << "\n";
+            cin.get();
+        }
         break;
     case 6:
         cout << "\n\tObtener clase\n\n";
@@ -307,6 +317,12 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
                     Inscripcion* nuevaInscripcion = new Inscripcion(fecha, socio);
                     coleccionClases.clases[i]->agregarInscripcionAlArreglo(nuevaInscripcion);
                     cout << "\nSe registro con exito la inscripcion.\n";
+                }else{
+                    std::ostringstream oss;
+                    std::string errorMessage = std::string("\No se puede inscribir. Se alcanzo el cupo maximo de inscripciones para la clase con id: ");
+                    oss << idClase;
+                    errorMessage += oss.str();
+                    throw invalid_argument(errorMessage);
                 }
             }
         }
@@ -322,7 +338,37 @@ void borrarInscripcion(string ciSocio, int idClase) {
 //Retorna un arreglo con los socios que están inscriptos a determinada clase. El largo del arreglo de
 //socios está dado por el parámetro cantSocios.
 DtSocio** obtenerInfoSociosPorClase(int idClase, int & cantSocios) {
-
+    if (existeClase(idClase) == false){
+        std::ostringstream oss;
+        std::string errorMessage = std::string("\nNo existe la clase con id: ");
+        oss << idClase;
+        errorMessage += oss.str();
+        throw invalid_argument(errorMessage);
+    }else{
+        int indice = 0;
+        while (indice < coleccionClases.tope) {
+            if (coleccionClases.clases[indice]->getId() == idClase) {
+                cantSocios = coleccionClases.clases[indice]->getTopeInscripciones();
+                if(cantSocios > 0){
+                    DtSocio* infoSocios[cantSocios];
+                    Inscripcion** inscripcionesDeClase = coleccionClases.clases[indice]->getInscripciones();
+                    for(int i = 0; i < cantSocios; i++){
+                        DtSocio* socio = new DtSocio(inscripcionesDeClase[i]->getSocio()->getCI(), inscripcionesDeClase[i]->getSocio()->getNombre());
+                        infoSocios[i] = socio;
+                    }
+                    return infoSocios;
+                }else{
+                    std::ostringstream oss;
+                    std::string errorMessage = std::string("\nNo se han realizado inscripciones a la clase con id: ");
+                    oss << idClase;
+                    errorMessage += oss.str();
+                    throw invalid_argument(errorMessage);
+                }
+            }else{
+                indice++;
+            }
+        }
+    }
 }
 
 //Retorna la información de la clase identificada por idClase.
